@@ -1,5 +1,7 @@
 # Data record
 
+DOI: https://doi.org/10.5281/zenodo.23682714
+
 Raw run-level logs and large analysis tables for *Opening the Gate: Surprising Evidence, Evaluation, and Guided Search in Bounded Discovery*. Code, plans, manifests and small analysis tables are in the code repository; this record holds the files that are too large for it. All data are simulated; there are no human participants and no personal data.
 
 License: CC BY 4.0 (see `LICENSE-DATA.md` in the repository).

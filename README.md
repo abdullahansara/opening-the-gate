@@ -65,7 +65,7 @@ Interrupted runs resume: re-run the same command and finished chunks are skipped
 
 ## Raw logs
 
-The raw run-level logs (`runs.csv`, `curves.csv`, `worlds.csv`; about 2.4 GB for all runs) and three large analysis tables are deposited separately in a data record with its own DOI (see `DATA.md` for the files, checksums and column definitions). Each run's `manifest.json` (tracked here) lists checksums of the logs. Unzip the archives into `results/` to rerun any analysis script. Every statistic in the paper can be rebuilt from these logs.
+The raw run-level logs (`runs.csv`, `curves.csv`, `worlds.csv`; about 2.4 GB for all runs) and three large analysis tables are deposited separately at Zenodo, https://doi.org/10.5281/zenodo.23682714 (see `DATA.md` for the files, checksums and column definitions). Each run's `manifest.json` (tracked here) lists checksums of the logs. Unzip the archives into `results/` to rerun any analysis script. Every statistic in the paper can be rebuilt from these logs.
 
 ## Resources
 

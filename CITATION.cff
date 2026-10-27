@@ -5,6 +5,10 @@ type: software
 version: 1.0.0
 date-released: 2026-10-26
 license: MIT
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23682714
+    description: "Raw run-level logs (Zenodo data record)"
 authors:
   - family-names: Cakir
     given-names: Enes
