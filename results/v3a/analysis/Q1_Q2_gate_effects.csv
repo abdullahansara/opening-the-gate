@@ -1,0 +1,10 @@
+analysis,contrast,estimate,se_twoway,lo_twoway,hi_twoway,lo_boot,hi_boot,lo,hi,p_twoway
+Q1 calibrated predictive uncertainty,gate effect: internal,0.3031,0.04,0.2247,0.3816,0.2116,0.3838,0.2116,0.3838,0.0
+Q1 calibrated predictive uncertainty,gate effect: internal_cal,0.2043,0.036,0.1338,0.2747,0.128,0.2734,0.128,0.2747,0.0
+Q1 calibrated predictive uncertainty,internal_cal - internal,-0.0989,0.0148,-0.1279,-0.0698,-0.1413,-0.0665,-0.1413,-0.0665,0.0
+Q2 gate works only until observation 30,gate effect: internal,0.3033,0.0401,0.2246,0.3819,0.2214,0.3926,0.2214,0.3926,0.0
+Q2 gate works only until observation 30,gate effect: internal_e30,0.031,0.0291,-0.026,0.0881,-0.0234,0.0879,-0.026,0.0881,0.2863
+Q2 gate works only until observation 30,internal_e30 - internal,-0.2722,0.0313,-0.3336,-0.2109,-0.3315,-0.2105,-0.3336,-0.2105,0.0
+Q2 gate works only until observation 60,gate effect: internal,0.3032,0.0401,0.2247,0.3818,0.2071,0.3835,0.2071,0.3835,0.0
+Q2 gate works only until observation 60,gate effect: internal_e60,0.0495,0.0301,-0.0096,0.1086,-0.016,0.1207,-0.016,0.1207,0.1004
+Q2 gate works only until observation 60,internal_e60 - internal,-0.2537,0.0298,-0.3121,-0.1954,-0.3129,-0.1847,-0.3129,-0.1847,0.0

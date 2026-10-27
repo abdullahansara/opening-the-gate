@@ -1,0 +1,13 @@
+variant,gt,n_admitted,n_revisions,n_proposals,cost_units,usefulness
+internal,low g,127.333,26.0,139.917,139.917,0.535
+internal,mid g,148.347,26.0,189.056,189.056,0.722
+internal,high g,157.483,26.0,150.4,150.4,0.714
+internal_admitted,low g,133.267,21.8,113.383,113.383,0.594
+internal_admitted,mid g,148.139,24.222,175.986,175.986,0.713
+internal_admitted,high g,157.417,25.833,148.933,148.933,0.717
+internal_random,low g,127.333,26.0,140.333,140.333,0.659
+internal_random,mid g,148.347,26.0,189.722,189.722,0.704
+internal_random,high g,157.483,26.0,150.5,150.5,0.729
+internal_random_admitted,low g,133.267,21.8,113.367,113.367,0.643
+internal_random_admitted,mid g,148.139,24.222,175.375,175.375,0.722
+internal_random_admitted,high g,157.417,25.833,149.217,149.217,0.731

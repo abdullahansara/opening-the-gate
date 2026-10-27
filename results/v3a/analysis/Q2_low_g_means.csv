@@ -1,0 +1,6 @@
+variant,usefulness,median,admitted,surprising,recovered
+internal,0.471,0.629,114.103,49.058,0.091
+internal_cal,0.546,0.711,125.428,36.998,0.11
+internal_e30,0.683,0.877,151.421,24.094,0.15
+internal_e60,0.665,0.855,141.808,31.562,0.137
+internal_random_online_cal,0.659,0.843,125.391,18.41,0.136

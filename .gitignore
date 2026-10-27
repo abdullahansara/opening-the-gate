@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+# raw run-level logs and large tables are deposited separately (see DATA.md)
+results/*/runs.csv
+results/*/curves.csv
+results/*/worlds.csv
+results/*/chunks/
+*.log

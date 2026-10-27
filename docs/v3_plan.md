@@ -1,0 +1,27 @@
+# Simulation 3, second set of controls ("Simulation 3b"): plan written before the new runs
+
+Status: exploratory, labelled as such everywhere. Written after Simulation 3 (v2x) was complete and before any run described here was started. It answers an independent review of the manuscript that asked (i) whether the closed-gate cost is mainly a consequence of the learner's unfitted, uncalibrated starting uncertainty, (ii) whether early filtering delays learning or entrenches a persistent error (path dependence), (iii) whether the false-term and extrapolation results depend on how the intervention is built and on the kind of distribution shift, and (iv) how the surprise-versus-random result varies continuously with outlier frequency and size. Everything runs on the frozen Simulation 2 worlds and seeds, so these runs are paired follow-ups, not independent replications.
+
+## New simulator options (all default to the frozen behaviour; `tests/test_v2_options.py` S9 and `scripts/check_v2_reproduction.py` check this)
+- `gate_end` (spec): observations from this index onward are admitted unconditionally (the gate works only between `burn_in` and `gate_end`). Default none.
+- `pred_unc = "param"` (spec): the standardised surprise uses a predictive variance that adds uncertainty about the fitted coefficients, mixture-weighted: sigma2 * x' (X'X)^+ x / pi per hypothesis, with X the learner's active data at its last refit. With few data this inflates the variance, so a learner that has seen little knows that it does not know much. Default "none" (the frozen predictive variance sigma2 / pi). Prediction and all other outcomes are unchanged; only the surprise test differs.
+- `design.version = 4` (`v3_conditions`, `build_tasks_v3`); `design.q_variant` (which logged variant supplies the online random-admission probability).
+
+## New runs (same 512 design points, 12 worlds per environment, same seeds as Simulation 2)
+Stage A (`v3a`, four environments, 98,304 runs): `internal` (re-run; must equal the logged run), `internal_cal` (calibrated predictive uncertainty), `internal_e30` (gate works only until observation 30, then everything is admitted), `internal_e60` (until 60).
+Stage B (`v3b`, 24,576 runs): `internal_random_online_cal`, an online random learner whose admission probability is the mean post-burn-in admission of `internal_cal` at the same design point and environment.
+Outlier grid (noisy environment only; 256 design points, 12 worlds): outlier probability {0, .04, .08, .16, .24} by outlier size {3, 6, 9, 12} noise SDs (the cell p = 0 has no outliers; 17 cells). Stage A runs `internal`; stage B runs `internal_random_online` with the probability taken from the cell's own `internal` runs. 17 x 3,072 x 2 = 104,448 runs.
+
+## Questions and what would count as an answer (fixed before the runs)
+1. Calibration. Gate effect (usefulness at g = .95 minus g = .05, the spline as in Simulation 2) for `internal_cal`, compared with 0.303 for `internal` and 0.106 for `internal_b30`. If it is at least 0.20, the closed-gate cost is not mainly a matter of miscalibrated starting uncertainty; if it is at most 0.11, it largely is. Also the paired difference `internal_cal` minus `internal_random_online_cal`.
+2. Path dependence. Gate effect for `internal_e30` and `internal_e60`. If at least half of 0.303 (0.15) remains after the gate has been opened at observation 30, early filtering has persistent consequences; if below 0.075, early filtering mainly delays learning. Also usefulness over time from the logged learning curves.
+3. Outlier grid. For each cell, the gate effect and the paired difference `internal` minus `internal_random_online` (positive = surprise-based admission better). Described as a map; no single test.
+4. Early rejection. In the default configuration, the proportion of observations turned away and the standardised prediction error in successive blocks of the first 60 observations, narrow versus wide gate, for the learners of the mechanism sample; and the same for `internal_cal`.
+5. Interventions on the mechanism sample (1,500 re-run learners, as before): removing non-proxy false terms with the remaining coefficients refitted (as reported) and with the remaining coefficients left unchanged; inserting one term chosen at random from the non-proxy library terms versus the term most correlated with the signal; evaluation on inputs from the training distribution, inputs scaled by 2, a shifted mean (+1 SD on every input), a variance expansion on one input only, changed correlations among the inputs, and a held-out region (inputs in the top quintile of the first input) inside the training range.
+6. Clipping. Median usefulness, mean unclipped usefulness and the share of runs with a recovered rule for the main contrasts (re-analysis of existing logs plus the new runs).
+
+## Departures and cautions stated in advance
+Matched-random twins at other surprise thresholds are still not run. Calibration is implemented in one way (coefficient uncertainty in the predictive variance) and not in others (e.g., a prior variance estimated from the first observations). The held-out-region shift is defined on the original input distribution only.
+
+## Smoke test disclosure
+Before the full runs, the code was exercised on 512 runs (16 design points, 2 worlds per environment). Its summary means were looked at (mean usefulness, admitted and surprising counts by variant for g below and above .3) after this plan was written and before any full run. They are not used anywhere.

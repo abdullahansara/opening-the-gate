@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the article."
+title: "ccsim: simulating discovery under bounds"
+type: software
+version: 1.0.0
+date-released: 2026-10-26
+license: MIT
+authors:
+  - family-names: Cakir
+    given-names: Enes
+  - family-names: Ansar
+    given-names: Abdullah
+    orcid: "https://orcid.org/0000-0001-8195-7530"
+preferred-citation:
+  type: article
+  title: "Opening the Gate: Surprising Evidence, Evaluation, and Guided Search in Bounded Discovery"
+  authors:
+    - family-names: Cakir
+      given-names: Enes
+    - family-names: Ansar
+      given-names: Abdullah
+  year: 2026
+  notes: "Submitted to the Journal of Creative Behavior"
+keywords:
+  - creativity
+  - discovery
+  - surprise
+  - model selection
+  - extended cognition
+  - simulation

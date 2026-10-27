@@ -1,0 +1,7 @@
+variant,usefulness,median,fail,admitted,recovered
+interactive,0.8,0.975,0.144,438.106,0.303
+internal,0.815,0.994,0.143,440.303,0.351
+internal_big,0.776,0.937,0.159,446.104,0.181
+internal_big_guided,0.789,0.979,0.14,437.959,0.163
+internal_guided,0.807,0.993,0.15,430.658,0.243
+passive,0.786,0.967,0.159,444.88,0.316

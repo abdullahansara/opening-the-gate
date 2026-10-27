@@ -1,0 +1,9 @@
+variant,usefulness,fail,false_discovery,n_false,proposals,cost
+interactive,0.697,0.24,0.771,2.562,141.417,162.811
+interactive_recent,0.721,0.234,0.75,2.516,141.307,162.703
+internal,0.661,0.26,0.745,2.531,161.62,161.62
+internal_big,0.671,0.286,0.781,2.875,160.896,160.896
+internal_big_guided,0.68,0.281,0.839,2.969,142.203,162.187
+internal_guided,0.713,0.245,0.802,2.88,149.208,162.573
+passive,0.642,0.312,0.693,2.521,161.302,162.758
+passive_recent,0.666,0.292,0.719,2.453,161.797,163.252

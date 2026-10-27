@@ -1,0 +1,13 @@
+env,grp,n,signal_error2,noise2,share_signal_dominated,share_outliers
+interacting,not surprising,41130,1.2678,0.0819,0.6372,0.0
+interacting,"surprising, admitted",3037,16.1098,0.1497,0.8057,0.0
+interacting,"surprising, rejected",5113,16.7253,0.1257,0.8445,0.0
+noisy,not surprising,43929,1.3004,0.6959,0.5095,0.0296
+noisy,"surprising, admitted",3099,11.9008,13.3038,0.547,0.374
+noisy,"surprising, rejected",6410,9.9497,8.8632,0.6211,0.2527
+shifting,not surprising,41794,1.278,0.0844,0.7297,0.0
+shifting,"surprising, admitted",4183,7057.5396,0.109,0.9519,0.0
+shifting,"surprising, rejected",7307,557.4947,0.1069,0.949,0.0
+simple,not surprising,43512,1.9509,0.0759,0.5522,0.0
+simple,"surprising, admitted",3279,16.1792,0.16,0.7594,0.0
+simple,"surprising, rejected",5569,13.3064,0.1378,0.808,0.0

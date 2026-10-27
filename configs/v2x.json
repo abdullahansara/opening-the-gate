@@ -1,0 +1,18 @@
+{
+ "extends": "default.json",
+ "seed_split": "confirmatory",
+ "design": {
+  "version": 3,
+  "n_points": 512,
+  "n_worlds": 12,
+  "q_source": "results/v2_confirm/runs.csv"
+ },
+ "run": {
+  "timeout_s": null
+ },
+ "chunk_tasks": 24,
+ "analysis": {
+  "n_boot": 400
+ },
+ "name": "v2x"
+}

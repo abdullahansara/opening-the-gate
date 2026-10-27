@@ -1,0 +1,9 @@
+model,term,coef,lo,hi
+negative binomial (alpha=0.05),lam_c,-1.9008,-2.0664,-1.7352
+negative binomial (alpha=0.05),margin_c,0.2582,0.1468,0.3696
+poisson,lam_c,-1.9009,-2.0669,-1.735
+poisson,margin_c,0.2468,0.1375,0.3561
+logit false_discovery,lam_c,-2.8613,-3.4338,-2.2887
+logit false_discovery,margin_c,0.9308,0.4588,1.4028
+ols count,lam_c,-4.6766,-5.0303,-4.3228
+ols count,margin_c,0.6363,0.3233,0.9494

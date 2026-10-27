@@ -1,0 +1,415 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' src_v1_frozen_backup/ccsim/agents.py src/ccsim/agents.py
+--- src_v1_frozen_backup/ccsim/agents.py	2026-10-11 21:59:52.933205900 -0500
++++ src/ccsim/agents.py	2026-10-11 21:59:53.179768700 -0500
+@@ -45,9 +45,21 @@
+         self.free_ops = bool(spec.get("free_ops", False))
+         self.u, self.rng_prop, self.rng_ret = u_admit, rng_prop, rng_ret
+         self.costs = acfg["costs"]
+-        self.lam = acfg["penalty_scale"] * self.c
+-        self.margin = acfg["margin_scale"] * (2 * self.c - 1)
+-        self.W_act = int(spec.get("window_override") or acfg["window_per_slot"] * self.m)
++        # v2 options (all default to v1 behaviour): complexity penalty and validation strictness can be set separately,
++        # pool size and fitting window can be set separately, guidance is independent of the artifact.
++        self.lam_c = float(spec["lam_c"]) if spec.get("lam_c") is not None else self.c
++        self.margin_c = float(spec["margin_c"]) if spec.get("margin_c") is not None else self.c
++        self.lam = acfg["penalty_scale"] * self.lam_c
++        self.margin = acfg["margin_scale"] * (2 * self.margin_c - 1)
++        self.m_pool = int(spec["m_pool"]) if spec.get("m_pool") is not None else int(self.m)
++        self.W_act = int(spec.get("window_override") or spec.get("window") or acfg["window_per_slot"] * self.m)
++        self.guided = bool(spec["guided"]) if spec.get("guided") is not None else (self.art == "interactive")
++        self.rev_trigger = spec.get("rev_trigger", acfg.get("rev_trigger", "admitted"))
++        self.credit_carry = bool(spec.get("credit_carry", acfg.get("credit_carry", True)))
++        self.retrieval = spec.get("retrieval", acfg.get("retrieval", "mixed"))
++        self.admit_mask = spec.get("admit_mask")           # v2 matched-random admission control (bool array, length T)
++        self.max_evals = spec.get("max_evals", acfg.get("max_evals"))
++        assert self.rev_trigger in ("admitted", "trial") and self.retrieval in ("mixed", "recent")
+         self.B = float(spec.get("budget_override") if spec.get("budget_override") is not None
+                        else acfg["budget_per_f"] * self.f)
+         K = lib.K
+@@ -64,6 +76,10 @@
+         self.weights = np.array([1.0])
+         self.map = start
+         self.n_switch = 0
++        self.n_switch_rev = 0                      # v2: MAP changed between the ends of consecutive revisions (max 1 per revision)
++        self.n_term_changes = 0                    # v2: symmetric-difference size of consecutive end-of-revision MAP structures
++        self.map_prev_rev = start
++        self.active_hist = []                      # v2 diagnostics: (t, active indices) at each revision (no world information)
+         self.proposal_log = []                      # (t, added, dropped, passed, chosen)
+         self.cnt = dict(evals_prop=0, evals_pool=0, writes=0, reads=0, annotate=0, compare=0, combine=0,
+                         revisions=0, artifact_cost=0.0, spent_cost=0.0)
+@@ -81,6 +97,11 @@
+         var = w @ vars_ + w @ ((means - mu) ** 2)
+         return mu, var
+ 
++    def predict_map(self, Phi):
++        """Prediction using only the MAP structure (v2 diagnostic; the mixture is used for the main outcomes)."""
++        coef = self.state[self.map][0]
++        return Phi[:, self.map] @ coef
++
+     # ------------------------------------------------------------------ main loop
+     def observe(self, t, x, y):
+         phi = self.lib.features(x)[0]
+@@ -93,18 +114,24 @@
+         else:
+             surprising = abs(z) > self.a["z_thr"]
+             self.surprising[t] = surprising
+-            admit = (not surprising) or (self.u[t] < self.g)
+-        if not admit:
+-            return
+-        self.admitted[t] = True
+-        self.adm.append(t); self.Phi[t] = phi; self.yv[t] = y
+-        if self.art in ("passive", "interactive"):
+-            self.cnt["writes"] += 1
+-            self._pay(self.costs["write"])
+-        self.since_rev += 1
+-        if self.since_rev >= self.a["rev_every"]:
+-            self.since_rev = 0
+-            self._revise(t)
++            if self.admit_mask is not None:            # matched-random control: admission ignores surprise
++                admit = bool(self.admit_mask[t])
++            else:
++                admit = (not surprising) or (self.u[t] < self.g)
++        if admit:
++            self.admitted[t] = True
++            self.adm.append(t); self.Phi[t] = phi; self.yv[t] = y
++            if self.art in ("passive", "interactive"):
++                self.cnt["writes"] += 1
++                self._pay(self.costs["write"])
++            self.since_rev += 1
++        if self.rev_trigger == "admitted":             # v1: one revision per `rev_every` ADMITTED observations
++            if admit and self.since_rev >= self.a["rev_every"]:
++                self.since_rev = 0
++                self._revise(t)
++        else:                                          # v2: one revision per `rev_every` TRIALS, whatever was admitted
++            if (t + 1) % self.a["rev_every"] == 0:
++                self._revise(t)
+ 
+     # ------------------------------------------------------------------ helpers
+     def _pay(self, amount):
+@@ -119,6 +146,8 @@
+     def _active(self, store):
+         if self.art in ("internal", "internal_big") or len(store) <= self.W_act:
+             active = store
++        elif self.retrieval == "recent":
++            active = store[-self.W_act:]
+         else:
+             n_recent = int(round(self.W_act * self.a["retrieval_recent_frac"]))
+             recent = store[-n_recent:] if n_recent > 0 else store[:0]
+@@ -151,7 +180,7 @@
+         self._refit_pool(self.pool, active)
+         best = self.map
+         best_coef = self.state[best][0]
+-        self.credit += self.B
++        self.credit = (self.credit + self.B) if self.credit_carry else self.B
+         self.credit -= self.pending_cost
+         self.pending_cost = 0.0
+         # train / validation split of the agent's own active data
+@@ -160,7 +189,7 @@
+         tr, va = active[~is_val], active[is_val]
+         use_val = len(va) >= 3 and len(tr) >= 4
+         queue = []
+-        if self.art == "interactive" and self.mode == "local":
++        if self.guided and self.mode == "local":
+             ops_cost = (self.costs["annotate"] + self.costs["compare"]) * len(store) + self.costs["combine"]
+             if self.credit >= ops_cost + 1.0 or self.free_ops:
+                 queue = self._workspace_ops(store, best, best_coef)
+@@ -173,7 +202,12 @@
+             best, accepted = self._local(t, best, tr, va, use_val, queue)
+         # final refit of the pool (incumbent + accepted + previous members) on the full active set
+         cand = list(dict.fromkeys(self.pool + accepted + [best]))
+-        self._refit_pool(cand, active, keep=self.m)
++        self._refit_pool(cand, active, keep=self.m_pool)
++        if self.cnt["revisions"] > 1 and self.map != self.map_prev_rev:
++            self.n_switch_rev += 1
++            self.n_term_changes += len(set(self.map) ^ set(self.map_prev_rev))
++        self.map_prev_rev = self.map
++        self.active_hist.append((t, active.copy()))
+ 
+     def _refit_pool(self, structs, active, keep=None):
+         n = len(active)
+@@ -181,6 +215,10 @@
+         for s in structs:
+             coef, rss = self._fit(s, active)
+             self.cnt["evals_pool"] += 1
++            if self.costs.get("pool_refit", 0.0):
++                self.cnt["spent_cost"] += self.costs["pool_refit"]
++                if not self.free_ops:
++                    self.pending_cost += self.costs["pool_refit"]
+             s2 = max(rss / max(n - len(s), 1), self.a["sigma2_floor"])
+             res.append((self._score(rss, n, len(s)), s, coef, s2))
+         res.sort(key=lambda r: (-r[0], r[1]))
+@@ -216,7 +254,7 @@
+         K = self.lib.K
+         tried, accepted, cache = set(), [], None
+         queue = list(queue)
+-        while self.credit >= 1.0:
++        while self.credit >= 1.0 and (self.max_evals is None or self.cnt["evals_prop"] < self.max_evals):
+             cand = self._propose(best, queue, tried, rp, K, a)
+             if cand is None:
+                 break
+diff -ru --strip-trailing-cr '--exclude=__pycache__' src_v1_frozen_backup/ccsim/config.py src/ccsim/config.py
+--- src_v1_frozen_backup/ccsim/config.py	2026-10-11 21:59:52.942225200 -0500
++++ src/ccsim/config.py	2026-10-11 22:00:18.116267300 -0500
+@@ -26,11 +26,17 @@
+         "budget_per_f": 14.0, "max_terms": 8, "p_add": 0.6, "p_drop": 0.2,
+         "retrieval_recent_frac": 0.5, "val_every": 4, "margin_scale": 0.1, "penalty_scale": 2.0,
+         "sigma2_floor": 1e-4,
++        # v2 options; defaults reproduce the frozen v1 behaviour exactly
++        "rev_trigger": "admitted",      # "admitted": revise every rev_every ADMITTED observations (v1); "trial": every rev_every TRIALS
++        "credit_carry": True,           # carry unspent proposal credit to the next revision (v1)
++        "retrieval": "mixed",           # passive/interactive window: "mixed" = recent half + random older (v1); "recent" = most recent only
++        "max_evals": None,              # optional deterministic cap on proposal evaluations per run
+         "costs": {"eval": 1.0, "write": 0.002, "read": 0.001, "annotate": 0.008,
+-                  "compare": 0.005, "combine": 0.05},
++                  "compare": 0.005, "combine": 0.05, "pool_refit": 0.0},
+     },
+     "run": {"timeout_s": 60.0, "ckpt_every": 20, "recover_window": 12, "recover_mult": 3.0},
+     "design": {
++        "version": 1,                   # 2 = confirmatory design (see design.sample_design_v2)
+         "n_points": 4, "n_worlds": 2,
+         "ranges": {"g": [0.0, 1.0], "f": [0.0, 1.0], "c": [0.0, 1.0],
+                    "pi": [0.5, 2.0], "m": [2, 8]},
+@@ -51,7 +57,7 @@
+     "chunk_tasks": 8,
+ }
+ 
+-SEED_SPLIT_OFFSET = {"dev": 0, "validation": 1000, "heldout": 10000}
++SEED_SPLIT_OFFSET = {"dev": 0, "validation": 1000, "heldout": 10000, "confirmatory": 20000}
+ 
+ PARAM_DOC = {
+     "master_seed": ("Root of every random stream (rng.py).", "any int; recorded in manifest."),
+@@ -79,7 +85,13 @@
+     "agent.penalty_scale": ("Complexity penalty weight lambda = penalty_scale * c (c=0.5 -> BIC).", "2.0"),
+     "agent.sigma2_floor": ("Numerical floor on residual variance.", "1e-4"),
+     "agent.costs.*": ("Cost units per operation; one likelihood evaluation (ridge-free refit) = 1.0. Ratios checked against measured timings by scripts/bench_costs.py.", "see results/bench"),
+-    "run.timeout_s": ("Wall-clock limit per run; exceeding it is logged as status 'timeout' (kept in data).", "60"),
++    "run.timeout_s": ("Wall-clock limit per run; exceeding it is logged as status 'timeout' (kept in data). null disables it (v2 uses agent.max_evals instead, which is deterministic).", "60"),
++    "agent.rev_trigger": ("'admitted' = revise after every rev_every admitted observations (v1, couples admission to search effort); 'trial' = revise every rev_every trials.", "admitted"),
++    "agent.credit_carry": ("Whether unspent proposal credit carries to the next revision (v1: yes).", "True"),
++    "agent.retrieval": ("Passive/interactive fitting window: 'mixed' recent half + uniform older (v1) or 'recent' only.", "mixed"),
++    "agent.max_evals": ("Optional cap on proposal evaluations per run (deterministic alternative to a wall-clock timeout).", "null"),
++    "agent.costs.pool_refit": ("Cost units charged per pool-structure refit (v1: 0, i.e. counted but free).", "0"),
++    "design.version": ("1 = v1 design over (g,f,c,pi,m); 2 = confirmatory design over (g,f,lam_c,margin_c,window,m_pool) with pi fixed.", "1"),
+     "run.ckpt_every": ("Held-out checkpoint interval (trials) for learning curves.", "20"),
+     "run.recover_window / recover_mult": ("Recovery = rolling mean squared prequential error <= recover_mult * noise variance over recover_window trials.", "12 / 3.0"),
+     "design.n_points": ("Sobol design points over (g,f,c,pi,m); power of two.", "set from pilot power analysis."),
+diff -ru --strip-trailing-cr '--exclude=__pycache__' src_v1_frozen_backup/ccsim/design.py src/ccsim/design.py
+--- src_v1_frozen_backup/ccsim/design.py	2026-10-11 21:59:52.927841700 -0500
++++ src/ccsim/design.py	2026-10-11 22:01:24.585910000 -0500
+@@ -52,7 +52,94 @@
+     return pts
+ 
+ 
++def sample_design_v2(cfg):
++    """Confirmatory design: scrambled Sobol over (g, f, lam_c, margin_c, window, m_pool); precision fixed at 1.
++    window = 12 * k for k in 2..8 (24..96 observations), m_pool in 2..8, both independent of each other."""
++    dc = cfg["design"]; r = dc["ranges"]
++    rng = stream(cfg["master_seed"], "design", dc["n_points"], 2)
++    u = qmc.Sobol(d=6, scramble=True, seed=rng).random(dc["n_points"])
++    lin = lambda key, x: r[key][0] + x * (r[key][1] - r[key][0])
++    pts = []
++    for i, row in enumerate(u):
++        k = min(int(2 + row[4] * 7), 8)
++        pts.append({"design_id": i, "g": lin("g", row[0]), "f": lin("f", row[1]), "lam_c": lin("c", row[2]), "margin_c": lin("c", row[3]),
++                    "window": 12 * k, "m_pool": min(int(2 + row[5] * 7), 8), "pi": 1.0})
++    return pts
++
++
++def v2_conditions(p):
++    """The 11 conditions run for every (design point, environment, world) in the confirmatory design, in dependency order
++    (a matched-random condition must come after the surprise-gated condition whose admitted count it copies)."""
++    base = {"g": p["g"], "f": p["f"], "c": 0.5, "lam_c": p["lam_c"], "margin_c": p["margin_c"], "pi": 1.0,
++            "m": p["m_pool"], "m_pool": p["m_pool"], "window": p["window"], "rev_trigger": "trial", "credit_carry": False}
++    mk = lambda **kw: {**base, **kw}
++    return [
++        ("internal", mk(artifact="internal", guided=False)),
++        ("internal_admitted", mk(artifact="internal", guided=False, rev_trigger="admitted")),
++        ("internal_random", mk(artifact="internal", guided=False, match_admitted_of="internal")),
++        ("internal_random_admitted", mk(artifact="internal", guided=False, rev_trigger="admitted", match_admitted_of="internal_admitted")),
++        ("internal_guided", mk(artifact="internal", guided=True)),
++        ("internal_big", mk(artifact="internal_big", guided=False)),
++        ("internal_big_guided", mk(artifact="internal_big", guided=True)),
++        ("passive", mk(artifact="passive", guided=False)),
++        ("interactive", mk(artifact="interactive", guided=True)),
++        ("passive_recent", mk(artifact="passive", guided=False, retrieval="recent")),
++        ("interactive_recent", mk(artifact="interactive", guided=True, retrieval="recent")),
++    ]
++
++
++# Ablation / sensitivity variants for the confirmatory study (reference learner uses the v2 parameterisation).
++ABLATIONS_V2 = {
++    "full":                 {"artifact": "interactive"},
++    "no_gating_var":        {"artifact": "interactive", "g": 1.0},
++    "g_low":                {"artifact": "interactive", "g": 0.1},
++    "no_eval_control":      {"artifact": "interactive", "lam_c": 0.0, "margin_c": 0.0},
++    "penalty_only":         {"artifact": "interactive", "lam_c": 0.5, "margin_c": 0.0},
++    "margin_only":          {"artifact": "interactive", "lam_c": 0.0, "margin_c": 0.5},
++    "strict_eval":          {"artifact": "interactive", "lam_c": 1.0, "margin_c": 1.0},
++    "no_artifact":          {"artifact": "internal"},
++    "internal_guided":      {"artifact": "internal", "guided": True},
++    "matched_memory":       {"artifact": "internal_big"},
++    "free_artifact_ops":    {"artifact": "interactive", "free_ops": True},
++    "pi_low":               {"artifact": "interactive", "pi": 0.5},
++    "pi_high":              {"artifact": "interactive", "pi": 2.0},
++    "pool_small":           {"artifact": "interactive", "m_pool": 2},
++    "pool_large":           {"artifact": "interactive", "m_pool": 8},
++    "window_small":         {"artifact": "interactive", "window": 24},
++    "window_large":         {"artifact": "interactive", "window": 96},
++}
++REF_V2 = {"g": 0.5, "f": 0.5, "c": 0.5, "lam_c": 0.5, "margin_c": 0.5, "pi": 1.0, "m": 5, "m_pool": 5, "window": 60,
++          "rev_trigger": "trial", "credit_carry": False}
++
++
++def build_tasks_v2(cfg, stages=("design", "ablation", "baseline")):
++    off = world_offset(cfg); envs_d = cfg["design"]["envs"]; tasks = []
++    if "design" in stages:
++        for p in sample_design_v2(cfg):
++            for env in envs_d:
++                for w in range(cfg["design"]["n_worlds"]):
++                    agents = [(label, spec, p["design_id"], p["design_id"]) for label, spec in v2_conditions(p)]
++                    tasks.append({"stage": "design", "env": env, "world_id": off + w, "agents": agents})
++    if "ablation" in stages:
++        for env in envs_d:
++            for w in range(cfg["ablation"]["n_worlds"]):
++                agents = [(name, {**REF_V2, **ov}, 1000 + j, 0) for j, (name, ov) in enumerate(ABLATIONS_V2.items())]
++                tasks.append({"stage": "ablation", "env": env, "world_id": off + w, "agents": agents})
++    if "baseline" in stages:
++        nw = max(cfg["baseline_worlds"], cfg["design"]["n_worlds"], cfg["ablation"]["n_worlds"])
++        for env in envs_d:
++            for w in range(nw):
++                agents = []
++                for j, (name, sp) in enumerate(BASELINES.items()):
++                    spec = dict(sp); spec["window_override"] = cfg["agent"]["store_capacity"]
++                    agents.append((name, spec, 2000 + j, 0))
++                tasks.append({"stage": "baseline", "env": env, "world_id": off + w, "agents": agents})
++    return tasks
++
++
+ def build_tasks(cfg, stages=("design", "ablation", "baseline")):
++    if cfg["design"].get("version", 1) == 2:
++        return build_tasks_v2(cfg, stages)
+     """Deterministic list of tasks; each task = one world + several agent specs run on it (paired)."""
+     off = world_offset(cfg)
+     envs_d = cfg["design"]["envs"]
+diff -ru --strip-trailing-cr '--exclude=__pycache__' src_v1_frozen_backup/ccsim/metrics.py src/ccsim/metrics.py
+--- src_v1_frozen_backup/ccsim/metrics.py	2026-10-11 21:59:52.955110900 -0500
++++ src/ccsim/metrics.py	2026-10-11 22:00:18.119228800 -0500
+@@ -16,12 +16,14 @@
+ 
+ def heldout_eval(agent, Phi_test, world):
+     mu, var = agent.predict(Phi_test)
++    mu_map = agent.predict_map(Phi_test)
+     ll = float(np.mean(gauss_ll(world.y_test, mu, var)))
+     mse = float(np.mean((mu - world.y_test) ** 2))
+     f_var = float(np.var(world.f_test))
+     r2_true = 1.0 - float(np.mean((mu - world.f_test) ** 2)) / f_var      # share of true signal captured
+     cover = float(np.mean(np.abs(world.y_test - mu) <= 1.645 * np.sqrt(np.maximum(var, 1e-8))))
+-    return {"heldout_ll": ll, "heldout_mse": mse, "r2_true": r2_true, "cover90": cover}
++    r2_map = 1.0 - float(np.mean((mu_map - world.f_test) ** 2)) / f_var   # prediction from the MAP structure only
++    return {"heldout_ll": ll, "heldout_mse": mse, "r2_true": r2_true, "cover90": cover, "r2_map": r2_map}
+ 
+ 
+ def oracle_ll(world):
+@@ -80,3 +82,45 @@
+         if err[t - window + 1:t + 1].mean() <= thr:
+             return {"recover_trials": float(t - world.shift_t), "recovered": 1.0}
+     return {"recover_trials": float(T - world.shift_t), "recovered": 0.0}   # right-censored
++
++
++# ---------------------------------------------------------------------------------------- v2 diagnostics
++_PROXY = {}
++
++
++def _proxy_r2(lib, false_id, true_ids):
++    """Multiple R^2 of a library term on the true non-constant terms (+ intercept) over N(0, I) inputs (cached, fixed draws)."""
++    if "F" not in _PROXY:
++        _PROXY["F"] = lib.features(np.random.default_rng(3).standard_normal((20000, lib.d)))
++    key = (false_id, tuple(sorted(true_ids)))
++    if key not in _PROXY:
++        F = _PROXY["F"]
++        A = np.column_stack([np.ones(len(F))] + [F[:, k] for k in key[1]])
++        y = F[:, false_id]
++        coef = np.linalg.lstsq(A, y, rcond=None)[0]
++        res = y - A @ coef
++        v = y.var()
++        _PROXY[key] = float(1.0 - (res @ res / len(y)) / v) if v > 0 else 1.0
++    return _PROXY[key]
++
++
++def v2_diagnostics(lib, agent, world):
++    true_nc = [k for k in world.true_struct if k != 0]
++    sel_nc = [k for k in agent.map if k != 0]
++    false = [k for k in sel_nc if k not in true_nc]
++    min_r2 = min((_proxy_r2(lib, k, true_nc) for k in false), default=np.nan)
++    # coefficient recovery on the true terms (MAP structure; a missed term counts as coefficient 0)
++    coefs = dict(zip(world.spec["final_terms"], world.spec["final_coefs"]))
++    state_coef = dict(zip(agent.map, agent.state[agent.map][0]))
++    err = []; tru = []
++    for k in true_nc:
++        name = lib.names[k]
++        err.append(state_coef.get(k, 0.0) - coefs[name]); tru.append(coefs[name])
++    nrmse = float(np.sqrt(np.mean(np.square(err))) / np.sqrt(np.mean(np.square(tru)))) if tru else np.nan
++    w = agent.weights
++    out = {"min_false_r2": float(min_r2), "coef_nrmse": nrmse, "max_weight": float(w.max()), "eff_n_hyp": float(1.0 / np.sum(w ** 2)),
++           "n_pool": int(len(w)), "n_switch_rev": agent.n_switch_rev, "n_term_changes": agent.n_term_changes}
++    for tt in (100, 160):
++        shares = [np.mean(act < world.shift_t) for (t_, act) in agent.active_hist if t_ <= tt - 1] if world.shift_t is not None else []
++        out[f"pre_shift_share_t{tt}"] = float(shares[-1]) if shares else np.nan
++    return out
+diff -ru --strip-trailing-cr '--exclude=__pycache__' src_v1_frozen_backup/ccsim/runner.py src/ccsim/runner.py
+--- src_v1_frozen_backup/ccsim/runner.py	2026-10-11 21:59:52.938209400 -0500
++++ src/ccsim/runner.py	2026-10-11 22:01:24.587906700 -0500
+@@ -14,7 +14,7 @@
+ from .config import config_hash
+ from .design import build_tasks
+ from .grammar import get_library
+-from .metrics import heldout_eval, oracle_ll, structure_metrics, proposal_metrics, recovery_metrics
++from .metrics import heldout_eval, oracle_ll, structure_metrics, proposal_metrics, recovery_metrics, v2_diagnostics
+ from .rng import stream, ENV_IDS, ARTIFACT_IDS
+ from .world import make_world
+ 
+@@ -69,7 +69,7 @@
+                     lo = max(0, t + 1 - ck)
+                     curves.append({"run_id": run_id, "t": t + 1, **ev,
+                                    "preq_mse": float(agent.preq_err[lo:t + 1].mean())})
+-                if time.perf_counter() - t0 > cfg["run"]["timeout_s"]:
++                if cfg["run"]["timeout_s"] is not None and time.perf_counter() - t0 > cfg["run"]["timeout_s"]:
+                     status, t_done = "timeout", t + 1
+                     break
+         except Exception as e:  # kept in the data with a status code, never discarded
+@@ -95,9 +95,14 @@
+         row.update(structure_metrics(lib, agent.map, world))
+         row.update(proposal_metrics(lib, agent, world))
+         row.update(recovery_metrics(agent, world, cfg["run"]["recover_window"], cfg["run"]["recover_mult"]))
++        row.update(v2_diagnostics(lib, agent, world))
+     except Exception as e:
+         row["status"] = "error"; row["error"] = f"metrics: {type(e).__name__}: {e}"[:200]
+     c = agent.cnt
++    row.update({"lam_c": agent.lam_c, "margin_c": agent.margin_c, "window": agent.W_act, "m_pool": agent.m_pool,
++                "guided": int(agent.guided), "rev_trigger": agent.rev_trigger, "credit_carry": int(agent.credit_carry),
++                "retrieval": agent.retrieval, "gate_mode": "matched_random" if agent.admit_mask is not None else "surprise",
++                "n_admitted_target": spec.get("_n_target", np.nan)})
+     row.update({
+         "n_switches": agent.n_switch, "n_revisions": c["revisions"],
+         "n_surprising": int(agent.surprising.sum()),
+@@ -125,9 +130,19 @@
+             seen.add((task["env"], task["world_id"]))
+             worlds.append({"env": task["env"], "world_id": task["world_id"], "program_hash": world.program_hash,
+                            "spec_json": json.dumps(world.spec, sort_keys=True)})
++        done_adm = {}
+         for label, spec, key_id, adm_key in task["agents"]:
+-            design_id = key_id if task["stage"] == "design" else (key_id if task["stage"] == "ablation" else key_id)
++            design_id = key_id
++            if spec.get("match_admitted_of"):        # matched-random control: admit exactly as many post-burn-in trials as the twin did
++                spec = dict(spec)
++                T, b = cfg["world"]["T"], cfg["agent"]["burn_in"]
++                n_post = int(done_adm[spec["match_admitted_of"]]) - b
++                rr_ = stream(cfg["master_seed"], "admission", ENV_IDS[task["env"]], task["world_id"], adm_key, 999)
++                mask = np.zeros(T, dtype=bool)
++                mask[b + rr_.choice(T - b, size=max(0, min(n_post, T - b)), replace=False)] = True
++                spec["admit_mask"] = mask; spec["_n_target"] = n_post + b
+             r, cv = run_agent(cfg, world, Phi_test, task["stage"], label, spec, key_id, adm_key, design_id)
++            done_adm[label] = r["n_admitted"]
+             rows.append(r); curves += cv
+     tmp = outdir / "chunks"
+     tmp.mkdir(parents=True, exist_ok=True)

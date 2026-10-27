@@ -1,0 +1,3 @@
+{ "extends": "default.json", "name": "v2_confirm", "seed_split": "confirmatory",
+  "design": {"version": 2, "n_points": 512, "n_worlds": 12}, "ablation": {"n_worlds": 48}, "baseline_worlds": 48,
+  "run": {"timeout_s": null}, "chunk_tasks": 24, "analysis": {"n_boot": 400} }

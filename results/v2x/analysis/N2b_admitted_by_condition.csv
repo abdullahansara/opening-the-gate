@@ -1,0 +1,7 @@
+variant,n_admitted,usefulness,n_false_terms
+internal,143.891,0.656,2.622
+internal_b30,150.808,0.686,2.493
+internal_random,143.891,0.688,2.44
+internal_random_b30,150.808,0.701,2.364
+internal_random_blocks,143.891,0.684,2.442
+internal_random_online,143.894,0.688,2.43

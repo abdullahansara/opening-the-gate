@@ -1,0 +1,17 @@
+env,artifact,orig_surprisal,orig_dist,sel_nl,nl_valid,nl_false,usefulness,false_discovery
+interacting,interactive,2.257,0.094,3.313,1.27,2.043,0.872,0.741
+interacting,internal,2.186,0.095,3.427,0.996,2.431,0.779,0.811
+interacting,internal_big,2.18,0.103,3.788,1.009,2.779,0.808,0.868
+interacting,passive,2.178,0.091,3.281,1.023,2.258,0.792,0.784
+noisy,interactive,2.176,0.087,3.168,1.032,2.136,0.71,0.74
+noisy,internal,2.118,0.08,2.924,0.787,2.138,0.62,0.765
+noisy,internal_big,2.154,0.088,3.206,0.837,2.369,0.707,0.821
+noisy,passive,2.116,0.078,2.812,0.781,2.031,0.625,0.744
+shifting,interactive,2.215,0.101,3.644,0.787,2.857,0.529,0.914
+shifting,internal,2.171,0.095,3.445,0.667,2.778,0.628,0.881
+shifting,internal_big,2.173,0.102,3.737,0.529,3.208,0.374,0.958
+shifting,passive,2.153,0.091,3.31,0.546,2.764,0.47,0.891
+simple,interactive,2.571,0.078,2.152,0.0,2.152,0.914,0.682
+simple,internal,2.462,0.082,2.5,0.0,2.5,0.879,0.76
+simple,internal_big,2.372,0.09,2.933,0.0,2.933,0.882,0.834
+simple,passive,2.442,0.079,2.412,0.0,2.412,0.872,0.745

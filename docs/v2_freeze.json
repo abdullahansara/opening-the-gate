@@ -1,0 +1,11 @@
+{
+  "frozen_utc": "2026-10-12T03:09:04+00:00",
+  "preregistration_sha256": "48146615f60d509f1deff0d31a7244343da6f20e6703c48c161c0e2dcf062aca",
+  "source_hash": "30aee55923a006655bd7260c321606150d4b5082623dd01a90ad0a5736893c8d",
+  "config_hash_v2_confirm": "6c1e55ae545444526c37745c50ee57440e1e85ab77723a013e2ae29f35d96e90",
+  "tests": "43 passed",
+  "v1_reproduction_check": "120 logged runs re-run, 0 mismatches",
+  "amended_utc": "2026-10-12T03:11:02+00:00",
+  "amendment_note": "Amendment 1: 'eight'->'nine' starred tests; p-values defined for Holm step; made before any confirmatory data were inspected (run in progress, no results opened).",
+  "preregistration_sha256_original": "3d645db4921e85e311a63f1aa453dcfd3b5caa1495d673926d0ccf41aa04583d"
+}

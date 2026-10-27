@@ -1,0 +1,1 @@
+{ "extends": "default.json", "name": "full", "seed_split": "heldout", "design": {"n_points": 128, "n_worlds": 48}, "ablation": {"n_worlds": 48}, "baseline_worlds": 48, "chunk_tasks": 24, "analysis": {"n_boot": 400} }

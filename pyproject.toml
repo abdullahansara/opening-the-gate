@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ccsim"
+version = "1.0.0"
+description = "Creative-cognition simulation: admission of surprise, structural discovery, and external artifacts"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy==2.5.3",
+  "scipy==1.18.1",
+  "pandas==3.0.6",
+  "matplotlib==3.11.2",
+  "statsmodels==0.15.0",
+  "patsy==1.0.3",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

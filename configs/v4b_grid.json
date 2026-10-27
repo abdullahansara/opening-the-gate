@@ -1,0 +1,5 @@
+{
+ "extends": "v4.json",
+ "name": "v4b_grid",
+ "design": {"version": 7, "n_points": 32, "n_worlds": 12, "reach": [10, 40], "shares": [0, 40, 100], "budgets": [16, 32, 64, 96]}
+}

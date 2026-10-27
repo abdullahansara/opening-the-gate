@@ -1,0 +1,33 @@
+contrast,estimate,se_twoway,lo_twoway,hi_twoway,lo_boot,hi_boot,lo,hi,p_twoway,n_cells,equivalent_pm_0.02,env
+all-data memory - internal,0.0105,0.0066,-0.0024,0.0234,-0.0076,0.0263,-0.0076,0.0263,0.1105,6144,False,interacting
+all-data memory (guided) - internal guided,-0.0011,0.0051,-0.0112,0.0089,-0.0148,0.0113,-0.0148,0.0113,0.8261,6144,True,interacting
+passive - internal,0.0051,0.0054,-0.0054,0.0157,-0.0082,0.0167,-0.0082,0.0167,0.3402,6144,True,interacting
+passive recent - internal,-0.0035,0.0031,-0.0096,0.0026,-0.0181,0.0118,-0.0181,0.0118,0.2661,6144,True,interacting
+interactive recent - internal guided,-0.0017,0.0045,-0.0106,0.0072,-0.0131,0.01,-0.0131,0.01,0.7024,6144,True,interacting
+interactive - internal guided,0.0022,0.0048,-0.0072,0.0115,-0.0089,0.0148,-0.0089,0.0148,0.6525,6144,True,interacting
+guidance | internal,0.0676,0.0179,0.0325,0.1027,0.0354,0.096,0.0325,0.1027,0.0002,6144,False,interacting
+surprise gate - random twin,-0.0427,0.0074,-0.0571,-0.0282,-0.0636,-0.028,-0.0636,-0.028,0.0,6144,False,interacting
+all-data memory - internal,0.1095,0.0238,0.063,0.1561,0.067,0.1752,0.063,0.1752,0.0,6144,False,noisy
+all-data memory (guided) - internal guided,0.1191,0.0327,0.055,0.1832,0.0684,0.1821,0.055,0.1832,0.0003,6144,False,noisy
+passive - internal,0.0299,0.0132,0.0042,0.0557,0.0034,0.063,0.0034,0.063,0.0228,6144,False,noisy
+passive recent - internal,-0.0009,0.0056,-0.0119,0.01,-0.0199,0.0145,-0.0199,0.0145,0.8657,6144,True,noisy
+interactive recent - internal guided,0.0398,0.009,0.0221,0.0575,0.02,0.0595,0.02,0.0595,0.0,6144,False,noisy
+interactive - internal guided,0.062,0.0191,0.0245,0.0994,0.029,0.1099,0.0245,0.1099,0.0012,6144,False,noisy
+guidance | internal,0.0196,0.0226,-0.0247,0.0639,-0.0216,0.0568,-0.0247,0.0639,0.3862,6144,False,noisy
+surprise gate - random twin,0.0166,0.0148,-0.0124,0.0456,-0.0137,0.0433,-0.0137,0.0456,0.262,6144,False,noisy
+all-data memory - internal,-0.2515,0.0662,-0.3814,-0.1217,-0.4101,-0.1565,-0.4101,-0.1217,0.0001,6144,False,shifting
+all-data memory (guided) - internal guided,-0.3267,0.0771,-0.4777,-0.1757,-0.5277,-0.2141,-0.5277,-0.1757,0.0,6144,False,shifting
+passive - internal,-0.1521,0.0399,-0.2302,-0.0739,-0.2387,-0.0921,-0.2387,-0.0739,0.0001,6144,False,shifting
+passive recent - internal,-0.0048,0.0058,-0.0162,0.0065,-0.0211,0.0155,-0.0211,0.0155,0.4044,6144,False,shifting
+interactive recent - internal guided,-0.0488,0.0099,-0.0682,-0.0293,-0.0662,-0.0357,-0.0682,-0.0293,0.0,6144,False,shifting
+interactive - internal guided,-0.2116,0.0525,-0.3144,-0.1088,-0.3388,-0.1408,-0.3388,-0.1088,0.0001,6144,False,shifting
+guidance | internal,0.1342,0.0227,0.0896,0.1788,0.0877,0.1777,0.0877,0.1788,0.0,6144,False,shifting
+surprise gate - random twin,-0.0762,0.0109,-0.0975,-0.0549,-0.099,-0.0542,-0.099,-0.0542,0.0,6144,False,shifting
+all-data memory - internal,0.012,0.0042,0.0038,0.0203,0.0009,0.0215,0.0009,0.0215,0.0042,6144,False,simple
+all-data memory (guided) - internal guided,0.0117,0.0034,0.0051,0.0183,0.0034,0.022,0.0034,0.022,0.0006,6144,True,simple
+passive - internal,0.0018,0.0034,-0.0048,0.0084,-0.0071,0.0128,-0.0071,0.0128,0.5919,6144,True,simple
+passive recent - internal,-0.0009,0.0038,-0.0084,0.0067,-0.0125,0.0096,-0.0125,0.0096,0.8192,6144,True,simple
+interactive recent - internal guided,0.0064,0.0031,0.0003,0.0126,-0.0019,0.0147,-0.0019,0.0147,0.0386,6144,True,simple
+interactive - internal guided,0.0103,0.0033,0.0039,0.0168,0.0023,0.0178,0.0023,0.0178,0.0017,6144,True,simple
+guidance | internal,0.0182,0.006,0.0065,0.0299,0.0037,0.0326,0.0037,0.0326,0.0023,6144,False,simple
+surprise gate - random twin,-0.0251,0.004,-0.033,-0.0172,-0.0352,-0.0148,-0.0352,-0.0148,0.0,6144,False,simple

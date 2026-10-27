@@ -1,0 +1,12 @@
+variant,usefulness,pre_shift_t100,pre_shift_t160
+interactive,0.424,0.728,0.347
+interactive_recent,0.543,0.707,0.119
+internal,0.493,0.687,0.096
+internal_admitted,0.477,0.673,0.078
+internal_big,0.313,0.834,0.52
+internal_big_guided,0.302,0.838,0.518
+internal_guided,0.573,0.712,0.121
+internal_random,0.566,0.697,0.106
+internal_random_admitted,0.59,0.693,0.09
+passive,0.38,0.715,0.345
+passive_recent,0.482,0.695,0.104

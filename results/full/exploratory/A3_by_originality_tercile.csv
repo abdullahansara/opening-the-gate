@@ -1,0 +1,13 @@
+env,orig_ter,usefulness,false_discovery,nl_false
+interacting,low,0.69,0.869,2.958
+interacting,mid,0.862,0.872,2.752
+interacting,high,0.886,0.663,1.423
+noisy,low,0.517,0.795,2.337
+noisy,mid,0.725,0.788,2.643
+noisy,high,0.755,0.72,1.526
+shifting,low,0.454,0.893,3.141
+shifting,mid,0.542,0.957,3.448
+shifting,high,0.505,0.882,2.116
+simple,low,0.757,0.933,3.781
+simple,mid,0.935,1.0,3.147
+simple,high,0.968,0.332,0.57

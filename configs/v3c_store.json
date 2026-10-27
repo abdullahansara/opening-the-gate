@@ -1,0 +1,11 @@
+{
+ "extends": "default.json",
+ "seed_split": "confirmatory",
+ "run": {"timeout_s": null},
+ "chunk_tasks": 12,
+ "analysis": {"n_boot": 400},
+ "world": {"T": 480},
+ "agent": {"store_capacity": 600},
+ "design": {"version": 5, "v3c_set": "store", "n_points": 128, "n_worlds": 6},
+ "name": "v3c_store"
+}

@@ -1,0 +1,7 @@
+val_tercile,variant,false_terms,usefulness,false_discovery,n_sel
+lenient,internal,2.422,0.667,0.701,3.796
+lenient,internal_dropwaive,2.366,0.67,0.691,3.75
+middle,internal,2.585,0.656,0.745,3.94
+middle,internal_dropwaive,2.222,0.67,0.685,3.611
+strict,internal,2.859,0.646,0.805,4.155
+strict,internal_dropwaive,1.97,0.674,0.659,3.348

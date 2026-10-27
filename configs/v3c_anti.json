@@ -1,0 +1,9 @@
+{
+ "extends": "default.json",
+ "seed_split": "confirmatory",
+ "run": {"timeout_s": null},
+ "chunk_tasks": 24,
+ "analysis": {"n_boot": 400},
+ "design": {"version": 5, "v3c_set": "anti", "n_points": 512, "n_worlds": 12, "q_source": "results/v2_confirm/runs.csv"},
+ "name": "v3c_anti"
+}

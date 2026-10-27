@@ -1,0 +1,10 @@
+{
+  "ablation_and_baseline_table.csv": "62b25c4ad56cd26ef4011cbba8c60b5a5903dea553772c39c1af5ae1343b747b",
+  "artifact_contrast_by_env.csv": "65a3e47e2a3de25e9afdac7727197c2a179ccc71aa2cdeeb8ec363c8c8cca51c",
+  "design_runs_with_benchmarks.csv": "ca01d34e98cf421d0f78cde3a17ed3ff6d9664299c3fcf557ef5f8c9b29e4e44",
+  "g_curvature_by_env_artifact.csv": "f2d624ec467177bef9b13cabe34a06e612c328c8b2725339e172ac0be8b841c2",
+  "paired_artifact_contrasts.csv": "4bb139d36279cea8ccbb44bfdb9117cbe0bd0ea18b713262c3792b8a074585fe",
+  "stats.json": "89eb6e1ede61646a98925a823b08cd74c09c0903ef35ab457134cebca99f9f0a",
+  "status_counts.csv": "d9d303f429db7d4fe0dcce00bbf0882066255d076e90726aff355e9a48355a00",
+  "summary_by_env_artifact.csv": "16c2125d959185a78048662d374a9a5827394e904aeaabe1731959ce6c3bb1b9"
+}

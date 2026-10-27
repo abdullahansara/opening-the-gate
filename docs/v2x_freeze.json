@@ -1,0 +1,10 @@
+{
+ "frozen_utc": "2026-10-12T08:21:57+00:00",
+ "plan_sha256": "3decd203ecfdcef5322fd4f79988baaf3ead62a84eb2317d9b11fd9937d1eb18",
+ "source_hash": "fdc68b33cc667a6bb23822c8700d62c1e076d2d477fac4722c435b532da373d2",
+ "config_hash_v2x": "93cbdf0de12327e237777a4ff70ada560c9c5689dfbda99fe023291819bac5b6",
+ "config_hash_v2x_noise_a": "1cf63fec5035442f4f6cd9f71979baea854615645ac816e12a0be498a35d8dff",
+ "config_hash_v2x_noise_b": "d405a57723e327712b6dd7956bc149971ffce0d9de0b7590fcb75041e09cce1f",
+ "tests": "48 passed",
+ "v2_reproduction_check": "330 logged Study 2 runs re-run, 0 mismatches"
+}

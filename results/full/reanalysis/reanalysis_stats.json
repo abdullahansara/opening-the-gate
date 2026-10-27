@@ -1,0 +1,982 @@
+{
+ "H4_wald_world": {
+  "chi2": 21.997366532805664,
+  "p": 6.531347570339238e-05
+ },
+ "H4_wald_design": {
+  "chi2": 4.751856048675291,
+  "p": 0.19089570466542488
+ },
+ "H4_wald_twoway": {
+  "chi2": 4.13988120633581,
+  "p": 0.24675026490415314
+ },
+ "A1": [
+  {
+   "estimate": "H1 curvature (g^2), usefulness",
+   "coef": -0.7139,
+   "se": 0.0356,
+   "lo": -0.7836,
+   "hi": -0.6442,
+   "p": 0.0,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H1 curvature (g^2), usefulness",
+   "coef": -0.7139,
+   "se": 0.2736,
+   "lo": -1.2502,
+   "hi": -0.1777,
+   "p": 0.0091,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H1 curvature (g^2), usefulness",
+   "coef": -0.7139,
+   "se": 0.2726,
+   "lo": -1.2482,
+   "hi": -0.1796,
+   "p": 0.0088,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H2 g x weak c, P(false discovery) [LPM]",
+   "coef": 0.158,
+   "se": 0.0089,
+   "lo": 0.1405,
+   "hi": 0.1754,
+   "p": 0.0,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H2 g x weak c, P(false discovery) [LPM]",
+   "coef": 0.158,
+   "se": 0.1143,
+   "lo": -0.0662,
+   "hi": 0.3821,
+   "p": 0.1672,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H2 g x weak c, P(false discovery) [LPM]",
+   "coef": 0.158,
+   "se": 0.114,
+   "lo": -0.0655,
+   "hi": 0.3814,
+   "p": 0.1658,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H2 g x weak c, structure switches",
+   "coef": 6.186,
+   "se": 0.1215,
+   "lo": 5.9479,
+   "hi": 6.4241,
+   "p": 0.0,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H2 g x weak c, structure switches",
+   "coef": 6.186,
+   "se": 2.3004,
+   "lo": 1.6773,
+   "hi": 10.6947,
+   "p": 0.0072,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H2 g x weak c, structure switches",
+   "coef": 6.186,
+   "se": 2.295,
+   "lo": 1.6879,
+   "hi": 10.6841,
+   "p": 0.007,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H2 g x weak c, false-discovery rate",
+   "coef": 0.134,
+   "se": 0.0072,
+   "lo": 0.1199,
+   "hi": 0.1481,
+   "p": 0.0,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H2 g x weak c, false-discovery rate",
+   "coef": 0.134,
+   "se": 0.094,
+   "lo": -0.0502,
+   "hi": 0.3182,
+   "p": 0.154,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H2 g x weak c, false-discovery rate",
+   "coef": 0.134,
+   "se": 0.0937,
+   "lo": -0.0496,
+   "hi": 0.3176,
+   "p": 0.1527,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H4 joint Wald (g x artifact), usefulness",
+   "coef": 21.9974,
+   "se": NaN,
+   "lo": NaN,
+   "hi": NaN,
+   "p": 0.0001,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H4 joint Wald (g x artifact), usefulness",
+   "coef": 4.7519,
+   "se": NaN,
+   "lo": NaN,
+   "hi": NaN,
+   "p": 0.1909,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H4 joint Wald (g x artifact), usefulness",
+   "coef": 4.1399,
+   "se": NaN,
+   "lo": NaN,
+   "hi": NaN,
+   "p": 0.2468,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H3 interactive - passive",
+   "coef": 0.0663,
+   "se": 0.0039,
+   "lo": 0.0586,
+   "hi": 0.0739,
+   "p": 0.0,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H3 interactive - passive",
+   "coef": 0.0663,
+   "se": 0.0063,
+   "lo": 0.0539,
+   "hi": 0.0786,
+   "p": 0.0,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H3 interactive - passive",
+   "coef": 0.0663,
+   "se": 0.0071,
+   "lo": 0.0523,
+   "hi": 0.0802,
+   "p": 0.0,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H3 interactive - internal_big",
+   "coef": 0.0631,
+   "se": 0.0063,
+   "lo": 0.0508,
+   "hi": 0.0753,
+   "p": 0.0,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H3 interactive - internal_big",
+   "coef": 0.0631,
+   "se": 0.0067,
+   "lo": 0.0499,
+   "hi": 0.0762,
+   "p": 0.0,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H3 interactive - internal_big",
+   "coef": 0.0631,
+   "se": 0.0089,
+   "lo": 0.0456,
+   "hi": 0.0806,
+   "p": 0.0,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H3 interactive - internal",
+   "coef": 0.0294,
+   "se": 0.0094,
+   "lo": 0.0109,
+   "hi": 0.0478,
+   "p": 0.0018,
+   "clustering": "world"
+  },
+  {
+   "estimate": "H3 interactive - internal",
+   "coef": 0.0294,
+   "se": 0.007,
+   "lo": 0.0158,
+   "hi": 0.043,
+   "p": 0.0,
+   "clustering": "design"
+  },
+  {
+   "estimate": "H3 interactive - internal",
+   "coef": 0.0294,
+   "se": 0.0115,
+   "lo": 0.0069,
+   "hi": 0.0518,
+   "p": 0.0104,
+   "clustering": "twoway"
+  },
+  {
+   "estimate": "H1 curvature",
+   "coef": -0.7068,
+   "se": 0.3066,
+   "lo": -1.3305,
+   "hi": -0.1299,
+   "p": NaN,
+   "clustering": "crossed bootstrap"
+  },
+  {
+   "estimate": "H2 g x weak c, false discovery",
+   "coef": 0.152,
+   "se": 0.1245,
+   "lo": -0.0684,
+   "hi": 0.4172,
+   "p": NaN,
+   "clustering": "crossed bootstrap"
+  },
+  {
+   "estimate": "H3 interactive - passive",
+   "coef": 0.0656,
+   "se": 0.0079,
+   "lo": 0.0502,
+   "hi": 0.0817,
+   "p": NaN,
+   "clustering": "crossed bootstrap"
+  },
+  {
+   "estimate": "H3 interactive - internal_big",
+   "coef": 0.0636,
+   "se": 0.0099,
+   "lo": 0.0452,
+   "hi": 0.082,
+   "p": NaN,
+   "clustering": "crossed bootstrap"
+  },
+  {
+   "estimate": "H3 interactive - internal",
+   "coef": 0.0299,
+   "se": 0.0116,
+   "lo": 0.0089,
+   "hi": 0.0548,
+   "p": NaN,
+   "clustering": "crossed bootstrap"
+  },
+  {
+   "estimate": "H1 spline: usefulness(g=.95) - usefulness(g=.69)",
+   "coef": -0.0029,
+   "se": 0.0321,
+   "lo": -0.0705,
+   "hi": 0.0431,
+   "p": NaN,
+   "clustering": "crossed bootstrap"
+  }
+ ],
+ "A2": {
+  "table": [
+   {
+    "controls": "none",
+    "g": 0.979,
+    "g2": -0.7139,
+    "r2": 0.2698
+   },
+   {
+    "controls": "n_revisions",
+    "g": -0.125,
+    "g2": -0.0441,
+    "r2": 0.3893
+   },
+   {
+    "controls": "n_proposals",
+    "g": 0.1257,
+    "g2": -0.1979,
+    "r2": 0.359
+   },
+   {
+    "controls": "n_revisions + n_proposals",
+    "g": -0.1261,
+    "g2": -0.0431,
+    "r2": 0.3901
+   },
+   {
+    "controls": "n_admitted",
+    "g": -0.125,
+    "g2": -0.0537,
+    "r2": 0.3901
+   },
+   {
+    "controls": "n_admitted_surprising",
+    "g": 0.9466,
+    "g2": -0.702,
+    "r2": 0.2701
+   }
+  ],
+  "realized_search": {
+   "n_admitted": {
+    "low": 126.4,
+    "mid": 147.8,
+    "high": 156.6
+   },
+   "n_revisions": {
+    "low": 20.6,
+    "mid": 24.2,
+    "high": 25.6
+   },
+   "n_proposals": {
+    "low": 135.2,
+    "mid": 158.7,
+    "high": 170.6
+   },
+   "evals_prop": {
+    "low": 135.2,
+    "mid": 158.7,
+    "high": 170.6
+   },
+   "cost_units": {
+    "low": 139.4,
+    "mid": 164.7,
+    "high": 177.2
+   }
+  },
+  "within_24_27_revisions": {
+   "n": 23792,
+   "g": -0.07217079146543304,
+   "g2": 0.0667903543806816
+  }
+ },
+ "A3": {
+  "by_c": {
+   "c<=1/3": {
+    "fd_raw": 0.945,
+    "fd_lt30": 0.884,
+    "fd_lt499": 0.925,
+    "fd_lt501": 0.93,
+    "fd_lt70": 0.944,
+    "fd_lt90": 0.945
+   },
+   "1/3<c<=2/3": {
+    "fd_raw": 0.768,
+    "fd_lt30": 0.589,
+    "fd_lt499": 0.698,
+    "fd_lt501": 0.711,
+    "fd_lt70": 0.762,
+    "fd_lt90": 0.768
+   },
+   "c>2/3": {
+    "fd_raw": 0.711,
+    "fd_lt30": 0.462,
+    "fd_lt499": 0.608,
+    "fd_lt501": 0.629,
+    "fd_lt70": 0.703,
+    "fd_lt90": 0.711
+   }
+  },
+  "by_env": {
+   "interacting": {
+    "fd_raw": 0.801,
+    "fd_lt30": 0.628,
+    "fd_lt499": 0.734,
+    "fd_lt501": 0.747,
+    "fd_lt70": 0.796,
+    "fd_lt90": 0.801
+   },
+   "noisy": {
+    "fd_raw": 0.768,
+    "fd_lt30": 0.557,
+    "fd_lt499": 0.682,
+    "fd_lt501": 0.697,
+    "fd_lt70": 0.759,
+    "fd_lt90": 0.768
+   },
+   "shifting": {
+    "fd_raw": 0.911,
+    "fd_lt30": 0.788,
+    "fd_lt499": 0.865,
+    "fd_lt501": 0.872,
+    "fd_lt70": 0.905,
+    "fd_lt90": 0.911
+   },
+   "simple": {
+    "fd_raw": 0.755,
+    "fd_lt30": 0.612,
+    "fd_lt499": 0.699,
+    "fd_lt501": 0.714,
+    "fd_lt70": 0.755,
+    "fd_lt90": 0.755
+   }
+  },
+  "overall": {
+   "fd_raw": 0.809,
+   "fd_lt30": 0.646,
+   "fd_lt499": 0.745,
+   "fd_lt501": 0.758,
+   "fd_lt70": 0.804,
+   "fd_lt90": 0.809
+  },
+  "g_x_weak_twoway": [
+   {
+    "estimate": "fd_raw",
+    "coef": 0.158,
+    "se": 0.114,
+    "lo": -0.0655,
+    "hi": 0.3814,
+    "p": 0.1658,
+    "mean": 0.8292
+   },
+   {
+    "estimate": "fd_lt30",
+    "coef": 0.1705,
+    "se": 0.1263,
+    "lo": -0.0771,
+    "hi": 0.4181,
+    "p": 0.1771,
+    "mean": 0.6752
+   },
+   {
+    "estimate": "fd_lt499",
+    "coef": 0.1647,
+    "se": 0.1191,
+    "lo": -0.0688,
+    "hi": 0.3983,
+    "p": 0.1668,
+    "mean": 0.7685
+   },
+   {
+    "estimate": "fd_lt501",
+    "coef": 0.1653,
+    "se": 0.1182,
+    "lo": -0.0664,
+    "hi": 0.397,
+    "p": 0.1619,
+    "mean": 0.7814
+   },
+   {
+    "estimate": "fd_lt70",
+    "coef": 0.1562,
+    "se": 0.1147,
+    "lo": -0.0686,
+    "hi": 0.3811,
+    "p": 0.1732,
+    "mean": 0.8252
+   },
+   {
+    "estimate": "fd_lt90",
+    "coef": 0.158,
+    "se": 0.114,
+    "lo": -0.0655,
+    "hi": 0.3814,
+    "p": 0.1658,
+    "mean": 0.8292
+   }
+  ],
+  "ablation_baseline": {
+   "bayes_unrestricted": {
+    "false_discovery": 0.677,
+    "fd_lt30": 0.583,
+    "fd_lt499": 0.656,
+    "fd_lt501": 0.656,
+    "fd_lt70": 0.677,
+    "fd_lt90": 0.677
+   },
+   "fixed_structure": {
+    "false_discovery": 1.0,
+    "fd_lt30": 1.0,
+    "fd_lt499": 1.0,
+    "fd_lt501": 1.0,
+    "fd_lt70": 1.0,
+    "fd_lt90": 1.0
+   },
+   "free_artifact_ops": {
+    "false_discovery": 0.76,
+    "fd_lt30": 0.656,
+    "fd_lt499": 0.719,
+    "fd_lt501": 0.729,
+    "fd_lt70": 0.76,
+    "fd_lt90": 0.76
+   },
+   "full": {
+    "false_discovery": 0.786,
+    "fd_lt30": 0.682,
+    "fd_lt499": 0.745,
+    "fd_lt501": 0.75,
+    "fd_lt70": 0.781,
+    "fd_lt90": 0.786
+   },
+   "m_high": {
+    "false_discovery": 0.812,
+    "fd_lt30": 0.719,
+    "fd_lt499": 0.786,
+    "fd_lt501": 0.786,
+    "fd_lt70": 0.807,
+    "fd_lt90": 0.812
+   },
+   "m_low": {
+    "false_discovery": 0.75,
+    "fd_lt30": 0.641,
+    "fd_lt499": 0.719,
+    "fd_lt501": 0.719,
+    "fd_lt70": 0.745,
+    "fd_lt90": 0.75
+   },
+   "matched_memory": {
+    "false_discovery": 0.865,
+    "fd_lt30": 0.734,
+    "fd_lt499": 0.818,
+    "fd_lt501": 0.818,
+    "fd_lt70": 0.859,
+    "fd_lt90": 0.865
+   },
+   "no_artifact": {
+    "false_discovery": 0.755,
+    "fd_lt30": 0.568,
+    "fd_lt499": 0.693,
+    "fd_lt501": 0.703,
+    "fd_lt70": 0.75,
+    "fd_lt90": 0.755
+   },
+   "no_eval_control": {
+    "false_discovery": 1.0,
+    "fd_lt30": 1.0,
+    "fd_lt499": 1.0,
+    "fd_lt501": 1.0,
+    "fd_lt70": 1.0,
+    "fd_lt90": 1.0
+   },
+   "no_gating_var": {
+    "false_discovery": 0.651,
+    "fd_lt30": 0.573,
+    "fd_lt499": 0.609,
+    "fd_lt501": 0.609,
+    "fd_lt70": 0.646,
+    "fd_lt90": 0.651
+   },
+   "no_proposals": {
+    "false_discovery": 0.0,
+    "fd_lt30": 0.0,
+    "fd_lt499": 0.0,
+    "fd_lt501": 0.0,
+    "fd_lt70": 0.0,
+    "fd_lt90": 0.0
+   },
+   "passive_artifact": {
+    "false_discovery": 0.781,
+    "fd_lt30": 0.583,
+    "fd_lt499": 0.693,
+    "fd_lt501": 0.698,
+    "fd_lt70": 0.771,
+    "fd_lt90": 0.781
+   },
+   "pi_high": {
+    "false_discovery": 0.969,
+    "fd_lt30": 0.958,
+    "fd_lt499": 0.964,
+    "fd_lt501": 0.964,
+    "fd_lt70": 0.969,
+    "fd_lt90": 0.969
+   },
+   "pi_low": {
+    "false_discovery": 0.411,
+    "fd_lt30": 0.276,
+    "fd_lt499": 0.349,
+    "fd_lt501": 0.37,
+    "fd_lt70": 0.401,
+    "fd_lt90": 0.411
+   },
+   "random_structure": {
+    "false_discovery": 0.979,
+    "fd_lt30": 0.911,
+    "fd_lt499": 0.974,
+    "fd_lt501": 0.979,
+    "fd_lt70": 0.979,
+    "fd_lt90": 0.979
+   }
+  },
+  "note": "multiple R^2 of a retained false term on the true non-constant terms (+intercept), 40,000 N(0,I) draws",
+  "min_false_r2_quantiles": {
+   "0.05": 0.0,
+   "0.1": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.0,
+   "0.75": 0.0,
+   "0.9": 0.498
+  },
+  "share_exactly_half": 0.08555974842767296
+ },
+ "A4_clip_share": {
+  "lower_clip": 0.010782877604166666,
+  "negative": 0.07719930013020833,
+  "ge_99": 0.316558837890625,
+  "lt_50": 0.21122233072916666
+ },
+ "A4": [
+  {
+   "estimate": "logit: P(false discovery), g x weak",
+   "coef": 1.7853,
+   "se": 1.6303,
+   "lo": -1.41,
+   "hi": 4.9805,
+   "p": 0.2735
+  },
+  {
+   "estimate": "logit AME of g (.25->.75) on P(FD), weak=0",
+   "coef": -0.0325,
+   "se": NaN,
+   "lo": NaN,
+   "hi": NaN,
+   "p": NaN
+  },
+  {
+   "estimate": "logit AME of g (.25->.75) on P(FD), weak=1",
+   "coef": 0.0386,
+   "se": NaN,
+   "lo": NaN,
+   "hi": NaN,
+   "p": NaN
+  },
+  {
+   "estimate": "poisson: number of false terms, g x weak",
+   "coef": 0.2178,
+   "se": 0.2235,
+   "lo": -0.2203,
+   "hi": 0.6559,
+   "p": 0.3299
+  },
+  {
+   "estimate": "ols: spurious-term rate, g x weak",
+   "coef": 0.007,
+   "se": 0.0164,
+   "lo": -0.0252,
+   "hi": 0.0392,
+   "p": 0.6697
+  },
+  {
+   "estimate": "logit: P(usefulness<.5), g^2",
+   "coef": 4.4634,
+   "se": 1.394,
+   "lo": 1.7312,
+   "hi": 7.1955,
+   "p": 0.0014
+  },
+  {
+   "estimate": "logit: P(usefulness<.5), g",
+   "coef": -6.509,
+   "se": 1.5506,
+   "lo": -9.5482,
+   "hi": -3.4699,
+   "p": 0.0
+  },
+  {
+   "estimate": "ols: usefulness | >=.5, g^2",
+   "coef": -0.075,
+   "se": 0.0259,
+   "lo": -0.1257,
+   "hi": -0.0243,
+   "p": 0.0037
+  },
+  {
+   "estimate": "ols: usefulness | >=.5, g",
+   "coef": 0.1249,
+   "se": 0.0291,
+   "lo": 0.0678,
+   "hi": 0.1819,
+   "p": 0.0
+  },
+  {
+   "estimate": "ols: UNCLIPPED r2, g^2",
+   "coef": -6.3578,
+   "se": 4.1352,
+   "lo": -14.4627,
+   "hi": 1.7471,
+   "p": 0.1242
+  },
+  {
+   "estimate": "unclipped r2: interactive - passive: mean / median",
+   "coef": 0.2095,
+   "se": 0.0029,
+   "lo": NaN,
+   "hi": NaN,
+   "p": NaN
+  },
+  {
+   "estimate": "unclipped r2: interactive - internal_big: mean / median",
+   "coef": 0.1371,
+   "se": 0.0015,
+   "lo": NaN,
+   "hi": NaN,
+   "p": NaN
+  },
+  {
+   "estimate": "unclipped r2: interactive - internal: mean / median",
+   "coef": 0.0013,
+   "se": 0.0011,
+   "lo": NaN,
+   "hi": NaN,
+   "p": NaN
+  }
+ ],
+ "A5": [
+  {
+   "variant": "no_artifact",
+   "n": 192,
+   "mean_diff": -0.0019,
+   "se": 0.0188,
+   "ci90_lo": -0.033,
+   "ci90_hi": 0.0292,
+   "equivalent_within_pm_0.02": false,
+   "equivalent_within_pm_0.05": true
+  },
+  {
+   "variant": "free_artifact_ops",
+   "n": 192,
+   "mean_diff": -0.0055,
+   "se": 0.0079,
+   "ci90_lo": -0.0185,
+   "ci90_hi": 0.0075,
+   "equivalent_within_pm_0.02": true,
+   "equivalent_within_pm_0.05": true
+  },
+  {
+   "variant": "pi_low",
+   "n": 192,
+   "mean_diff": 0.0091,
+   "se": 0.0087,
+   "ci90_lo": -0.0053,
+   "ci90_hi": 0.0236,
+   "equivalent_within_pm_0.02": false,
+   "equivalent_within_pm_0.05": true
+  },
+  {
+   "variant": "m_high",
+   "n": 192,
+   "mean_diff": -0.0286,
+   "se": 0.0092,
+   "ci90_lo": -0.0438,
+   "ci90_hi": -0.0135,
+   "equivalent_within_pm_0.02": false,
+   "equivalent_within_pm_0.05": true
+  },
+  {
+   "variant": "no_gating_var",
+   "n": 192,
+   "mean_diff": 0.0227,
+   "se": 0.0087,
+   "ci90_lo": 0.0083,
+   "ci90_hi": 0.0371,
+   "equivalent_within_pm_0.02": false,
+   "equivalent_within_pm_0.05": true
+  },
+  {
+   "variant": "passive_artifact",
+   "n": 192,
+   "mean_diff": -0.0734,
+   "se": 0.0152,
+   "ci90_lo": -0.0985,
+   "ci90_hi": -0.0484,
+   "equivalent_within_pm_0.02": false,
+   "equivalent_within_pm_0.05": false
+  },
+  {
+   "variant": "matched_memory",
+   "n": 192,
+   "mean_diff": -0.092,
+   "se": 0.0142,
+   "ci90_lo": -0.1155,
+   "ci90_hi": -0.0686,
+   "equivalent_within_pm_0.02": false,
+   "equivalent_within_pm_0.05": false
+  }
+ ],
+ "A6": {
+  "usefulness_by_checkpoint": {
+   "20": {
+    "interactive": -0.255,
+    "internal": -0.318,
+    "internal_big": -0.328,
+    "passive": -0.32
+   },
+   "40": {
+    "interactive": -0.091,
+    "internal": -0.138,
+    "internal_big": -0.143,
+    "passive": -0.145
+   },
+   "60": {
+    "interactive": -0.037,
+    "internal": -0.054,
+    "internal_big": -0.054,
+    "passive": -0.057
+   },
+   "80": {
+    "interactive": -0.015,
+    "internal": -0.025,
+    "internal_big": -0.017,
+    "passive": -0.027
+   },
+   "100": {
+    "interactive": 0.137,
+    "internal": 0.128,
+    "internal_big": 0.097,
+    "passive": 0.131
+   },
+   "120": {
+    "interactive": 0.306,
+    "internal": 0.334,
+    "internal_big": 0.2,
+    "passive": 0.272
+   },
+   "140": {
+    "interactive": 0.431,
+    "internal": 0.508,
+    "internal_big": 0.295,
+    "passive": 0.383
+   },
+   "160": {
+    "interactive": 0.529,
+    "internal": 0.628,
+    "internal_big": 0.374,
+    "passive": 0.47
+   }
+  },
+  "pre_change_share_m5": {
+   "100": {
+    "interactive": 0.667,
+    "internal": 0.667,
+    "internal_big": 0.8,
+    "passive": 0.667
+   },
+   "120": {
+    "interactive": 0.444,
+    "internal": 0.333,
+    "internal_big": 0.667,
+    "passive": 0.444
+   },
+   "140": {
+    "interactive": 0.364,
+    "internal": 0.0,
+    "internal_big": 0.571,
+    "passive": 0.364
+   },
+   "160": {
+    "interactive": 0.308,
+    "internal": 0.0,
+    "internal_big": 0.5,
+    "passive": 0.308
+   }
+  }
+ },
+ "A7": {
+  "elapsed_s": {
+   "interactive": 0.0795,
+   "internal": 0.0794,
+   "internal_big": 0.0807,
+   "passive": 0.0806
+  },
+  "cost_units": {
+   "interactive": 157.603,
+   "internal": 161.3662,
+   "internal_big": 160.5242,
+   "passive": 162.1612
+  },
+  "prop_cost": {
+   "interactive": 136.6619,
+   "internal": 161.3662,
+   "internal_big": 160.5242,
+   "passive": 160.7694
+  },
+  "artifact_cost": {
+   "interactive": 20.941,
+   "internal": 0.0,
+   "internal_big": 0.0,
+   "passive": 1.3918
+  },
+  "evals_pool": {
+   "interactive": 206.7873,
+   "internal": 203.5781,
+   "internal_big": 201.8801,
+   "passive": 203.834
+  },
+  "n_proposals": {
+   "interactive": 136.6619,
+   "internal": 161.3662,
+   "internal_big": 160.5242,
+   "passive": 160.7694
+  },
+  "n_revisions": {
+   "interactive": 23.0248,
+   "internal": 23.5746,
+   "internal_big": 23.7272,
+   "passive": 23.6681
+  },
+  "reads": {
+   "interactive": 1063.2979,
+   "internal": 0.0,
+   "internal_big": 0.0,
+   "passive": 1102.6584
+  },
+  "annotate_ops": {
+   "interactive": 1430.55,
+   "internal": 0.0,
+   "internal_big": 0.0,
+   "passive": 0.0
+  },
+  "compare_ops": {
+   "interactive": 1430.55,
+   "internal": 0.0,
+   "internal_big": 0.0,
+   "passive": 0.0
+  },
+  "corr(cost_units, elapsed_s) within artifact": {
+   "interactive": 0.51,
+   "internal": 0.544,
+   "internal_big": 0.587,
+   "passive": 0.56
+  }
+ },
+ "A8": [
+  {
+   "estimate": "orig_surprisal only",
+   "coef": 0.2005,
+   "se": 0.0192,
+   "lo": 0.1629,
+   "hi": 0.2381,
+   "p": 0.0
+  },
+  {
+   "estimate": "+ n_sel_terms, n_true_terms, n_true_nl",
+   "coef": 0.1979,
+   "se": 0.0128,
+   "lo": 0.1729,
+   "hi": 0.2229,
+   "p": 0.0
+  },
+  {
+   "estimate": "orig_dist only",
+   "coef": 1.3313,
+   "se": 0.4055,
+   "lo": 0.5365,
+   "hi": 2.126,
+   "p": 0.001
+  },
+  {
+   "estimate": "orig_dist + true complexity",
+   "coef": 1.4071,
+   "se": 0.4193,
+   "lo": 0.5853,
+   "hi": 2.2289,
+   "p": 0.0008
+  }
+ ],
+ "A8_note": "orig_dist == n_sel_terms / 46 exactly",
+ "A8_check_orig_dist": 8.326672684688674e-17
+}

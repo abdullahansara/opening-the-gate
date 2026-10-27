@@ -1,0 +1,206 @@
+{
+  "chunk_sha256": {
+    "curves_00000.csv": "e27770e602a6cc0d787f2bc06a5a6b5a6c1e7d4e188b41bd2ef37a9981f43ad3",
+    "curves_00001.csv": "bb837b7bf72f1da4085f2829b96228d991259d6decf8264ee60ea421fb87b6f5",
+    "curves_00002.csv": "51e8b91fd845b03cc2006f3e3eca6672b7816f6c3b68864bb2f59fb9632c116d",
+    "curves_00003.csv": "c0da81d002463a6eaf78bb5a47a7412405a7ae37785cba444e061784e684a470",
+    "curves_00004.csv": "71692984c3e8c4cdb5dee9491800927dc7606ae9821d10b9660065efc7b54967",
+    "curves_00005.csv": "2f160a3105c4b3e9544dd93e1d9f1fcbeeec8e5d7622a37663a77cbbc4704f69",
+    "curves_00006.csv": "a15014cb9e74770836b54777fc68bfb54192c4eee830ff23256742f625d28960",
+    "curves_00007.csv": "3a24c34009b096ecd41f31573ffc1170afe7a27caeeaa3ef6b6e3561fcec3402",
+    "curves_00008.csv": "78b3f72986b2ace943f719f7a5c795c846bfc4297694c77e6dbe5d5f2f2f25dc",
+    "curves_00009.csv": "9e876b8dff3bd48bf73eabec8e8e44078b0f8d97792ce3da4aad5e7ea6d5fb90",
+    "curves_00010.csv": "4af660ec9b6fa1410499dfe13a7bda41f4e3f3d930b4cec4ceebe94443bd8bae",
+    "runs_00000.csv": "cb4609662b08d5752a49ba6c92112adcafcd22979ce7a7c048caecce57db5ad8",
+    "runs_00001.csv": "e404202530294bdb8aef8d27a7523fa866e9d5c0ae6e500f23465b84b9865922",
+    "runs_00002.csv": "b80eb594329820c7887795de8d5bf743c5f753b5789a880df9ba80306cf0a938",
+    "runs_00003.csv": "f65d3eda8f2162872eba4020933b9a4d1b658142d98a785b58cbb04b6cf9777d",
+    "runs_00004.csv": "5c43c8da34c0451e9bb703bdacf7107e1c8c80d60b1936be6e407ad88de43f70",
+    "runs_00005.csv": "57b18d20a1257bf7a899772497ea700fd7932f8d97950aed72756c4e5f58ad30",
+    "runs_00006.csv": "dcb1ef942a7e4f703e3ced21a81b1029f4120fd9642c88655ceb79f97c092601",
+    "runs_00007.csv": "8c48059c3857575013141ffaad63997e553d59129d9e6a6ec35f29f4bfc83226",
+    "runs_00008.csv": "1fd0f3d776a041549e76454618c40fffbd1404cf693d6cc394379fc878cb3d57",
+    "runs_00009.csv": "2644b3d0c68ef01a4572e102b16d33f253e7eee7bb4e88234e760ed04dd7ca3b",
+    "runs_00010.csv": "64b33b59b0b0ade44907a13a9a5316b63781bb5795a732accf477754fc75d3c5",
+    "worlds_00000.csv": "043ab715a93e9c13ae4f445e3dee3b379aac6b2557d6f7e5125cd0b629a0c36f",
+    "worlds_00001.csv": "d6015d8c35696bd6569a354e1be94e4660d608591c45d3961bf60155a2f9ea7a",
+    "worlds_00002.csv": "043ab715a93e9c13ae4f445e3dee3b379aac6b2557d6f7e5125cd0b629a0c36f",
+    "worlds_00003.csv": "d6015d8c35696bd6569a354e1be94e4660d608591c45d3961bf60155a2f9ea7a",
+    "worlds_00004.csv": "043ab715a93e9c13ae4f445e3dee3b379aac6b2557d6f7e5125cd0b629a0c36f",
+    "worlds_00005.csv": "d6015d8c35696bd6569a354e1be94e4660d608591c45d3961bf60155a2f9ea7a",
+    "worlds_00006.csv": "043ab715a93e9c13ae4f445e3dee3b379aac6b2557d6f7e5125cd0b629a0c36f",
+    "worlds_00007.csv": "d6015d8c35696bd6569a354e1be94e4660d608591c45d3961bf60155a2f9ea7a",
+    "worlds_00008.csv": "051608fe6cd0c2fc7827e6911643c4646032e49e2a210c8c9e2d86df77af1052",
+    "worlds_00009.csv": "043ab715a93e9c13ae4f445e3dee3b379aac6b2557d6f7e5125cd0b629a0c36f",
+    "worlds_00010.csv": "d6015d8c35696bd6569a354e1be94e4660d608591c45d3961bf60155a2f9ea7a"
+  },
+  "config": {
+    "ablation": {
+      "n_worlds": 1,
+      "reference": {
+        "c": 0.5,
+        "f": 0.5,
+        "g": 0.5,
+        "m": 5,
+        "pi": 1.0
+      }
+    },
+    "agent": {
+      "budget_per_f": 14.0,
+      "burn_in": 6,
+      "costs": {
+        "annotate": 0.002,
+        "combine": 0.1,
+        "compare": 0.001,
+        "eval": 1.0,
+        "read": 0.001,
+        "write": 0.002
+      },
+      "margin_scale": 0.1,
+      "max_terms": 8,
+      "p_add": 0.6,
+      "p_drop": 0.2,
+      "penalty_scale": 2.0,
+      "retrieval_recent_frac": 0.5,
+      "rev_every": 6,
+      "sigma2_floor": 0.0001,
+      "store_capacity": 200,
+      "val_every": 4,
+      "window_per_slot": 12,
+      "z_thr": 2.0
+    },
+    "analysis": {
+      "adequate_c_min": 0.5,
+      "adequate_f_min": 0.3,
+      "alpha": 0.05,
+      "ci_target_halfwidth_pair": 0.02,
+      "ci_target_halfwidth_slope": 0.05,
+      "cv_folds": 5,
+      "n_boot": 400,
+      "peak_interior": [
+        0.1,
+        0.9
+      ],
+      "strong_c_min": 0.6666666666666666,
+      "weak_c_max": 0.3333333333333333
+    },
+    "baseline_worlds": 2,
+    "chunk_tasks": 4,
+    "design": {
+      "artifacts": [
+        "internal",
+        "internal_big",
+        "passive",
+        "interactive"
+      ],
+      "envs": [
+        "simple",
+        "interacting",
+        "noisy",
+        "shifting"
+      ],
+      "n_points": 4,
+      "n_worlds": 2,
+      "ranges": {
+        "c": [
+          0.0,
+          1.0
+        ],
+        "f": [
+          0.0,
+          1.0
+        ],
+        "g": [
+          0.0,
+          1.0
+        ],
+        "m": [
+          2,
+          8
+        ],
+        "pi": [
+          0.5,
+          2.0
+        ]
+      }
+    },
+    "master_seed": 20261011,
+    "name": "smoke",
+    "run": {
+      "ckpt_every": 20,
+      "recover_mult": 3.0,
+      "recover_window": 12,
+      "timeout_s": 60.0
+    },
+    "seed_split": "dev",
+    "workers": 6,
+    "world": {
+      "T": 160,
+      "d": 5,
+      "envs": {
+        "interacting": {
+          "contam_p": 0.0,
+          "contam_scale": 0.0,
+          "noise_sd": 0.3
+        },
+        "noisy": {
+          "contam_p": 0.08,
+          "contam_scale": 6.0,
+          "noise_sd": 0.8
+        },
+        "shifting": {
+          "contam_p": 0.0,
+          "contam_scale": 0.0,
+          "noise_sd": 0.3
+        },
+        "simple": {
+          "contam_p": 0.0,
+          "contam_scale": 0.0,
+          "noise_sd": 0.3
+        }
+      },
+      "min_signal_var": 0.8,
+      "n_test": 400,
+      "shift_frac": 0.5
+    }
+  },
+  "config_hash": "fb40cd298b21798a1811d052b118da065bc1b6f1137ca802ccf4076947da92a9",
+  "config_name": "smoke",
+  "counts": {
+    "curves": 1600,
+    "runs": 200,
+    "worlds": 8
+  },
+  "cpu": "11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz",
+  "created_utc": "2026-10-11T18:48:15+00:00",
+  "git_commit": null,
+  "gpu": null,
+  "logical_cores": 8,
+  "output_sha256": {
+    "curves.csv": "5568e071bf70bed24a61f4835e394cf319f7551164d417ff1f114b767dd9bdd8",
+    "runs.csv": "4990e632d8a4326fa9b26fdd028bf1246095f57684ee2a03814f18b64d10ed39",
+    "worlds.csv": "5a0f2edce80124c47305863d135c4f8fdd0f6dc7a80c473be5ea1514c4d1a5bf"
+  },
+  "package_versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "patsy": "1.0.3",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "seeds": {
+    "ablation_worlds": 1,
+    "baseline_worlds": 2,
+    "design_worlds": 2,
+    "master_seed": 20261011,
+    "seed_split": "dev",
+    "world_id_offset": 0
+  },
+  "source_sha256": "4f847c73ae5671c95aa8a3dcb39fa46e434b5d3919a2f93874b3dcedb1112731",
+  "wall_seconds_this_invocation": 6.47,
+  "workers": 4
+}

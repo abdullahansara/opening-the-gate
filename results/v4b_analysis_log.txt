@@ -1,0 +1,72 @@
+
+== N = 12 observations kept (32 settings x 12 worlds per cell)
+              estimate     lo     hi
+A[s=1,r=4.0]     0.659  0.479  0.819
+A[s=1,r=1.0]     0.721  0.577  0.872
+A[s=0,r=4.0]     0.277  0.057  0.451
+A[s=0,r=1.0]     0.227  0.035  0.407
+slope[r=4.0]     0.335  0.119  0.589
+slope[r=1.0]     0.513  0.287  0.746
+slope diff      -0.179 -0.396  0.056
+cell means of A:
+       r=1.0  r=4.0
+s=0.0  0.227  0.277
+s=0.2  0.248  0.372
+s=0.4  0.380  0.457
+s=0.6  0.437  0.456
+s=0.8  0.603  0.517
+s=1.0  0.721  0.659
+
+== N = 24 observations kept (32 settings x 12 worlds per cell)
+              estimate     lo     hi
+A[s=1,r=4.0]     0.394  0.242  0.544
+A[s=1,r=1.0]     0.204  0.132  0.289
+A[s=0,r=4.0]     0.119  0.016  0.223
+A[s=0,r=1.0]     0.094 -0.023  0.223
+slope[r=4.0]     0.182  0.011  0.341
+slope[r=1.0]     0.127 -0.022  0.270
+slope diff       0.055 -0.111  0.226
+cell means of A:
+       r=1.0  r=4.0
+s=0.0  0.094  0.119
+s=0.2  0.067  0.404
+s=0.4  0.186  0.336
+s=0.6  0.180  0.376
+s=0.8  0.184  0.357
+s=1.0  0.204  0.394
+
+== N = 48 observations kept (32 settings x 12 worlds per cell)
+              estimate     lo     hi
+A[s=1,r=4.0]     0.103  0.018  0.200
+A[s=1,r=1.0]     0.058  0.022  0.105
+A[s=0,r=4.0]     0.070  0.021  0.121
+A[s=0,r=1.0]     0.052 -0.002  0.106
+slope[r=4.0]     0.012 -0.066  0.092
+slope[r=1.0]     0.018 -0.036  0.087
+slope diff      -0.006 -0.102  0.099
+cell means of A:
+       r=1.0  r=4.0
+s=0.0  0.052  0.070
+s=0.2  0.052  0.189
+s=0.4  0.057  0.179
+s=0.6  0.069  0.103
+s=0.8  0.079  0.188
+s=1.0  0.058  0.103
+
+mechanism (means per run, all shares):
+                            n_signal  n_signal_admitted  usefulness
+variant              reach                                         
+keep_surprising_n012 1.0        6.39               0.33        0.29
+                     4.0        6.39               2.52        0.05
+keep_surprising_n024 1.0        6.39               0.73        0.68
+                     4.0        6.39               3.46        0.54
+keep_surprising_n048 1.0        6.39               1.71        0.82
+                     4.0        6.39               4.33        0.71
+random_cap_n012      1.0        6.39               0.63       -0.14
+                     4.0        6.39               0.65       -0.40
+random_cap_n024      1.0        6.39               1.12        0.53
+                     4.0        6.39               1.10        0.21
+random_cap_n048      1.0        6.39               2.06        0.76
+                     4.0        6.39               2.01        0.57
+
+ceiling internal_big_all usefulness by reach: {1.0: 0.857, 4.0: 0.757}

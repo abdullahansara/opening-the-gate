@@ -1,0 +1,5 @@
+artifact,elapsed_s,cost_units,prop_cost,artifact_cost,evals_pool,n_proposals,n_revisions,reads,annotate_ops,compare_ops,"corr(cost_units, elapsed_s) within artifact"
+interactive,0.0795,157.603,136.6619,20.941,206.7873,136.6619,23.0248,1063.2979,1430.55,1430.55,0.51
+internal,0.0794,161.3662,161.3662,0.0,203.5781,161.3662,23.5746,0.0,0.0,0.0,0.544
+internal_big,0.0807,160.5242,160.5242,0.0,201.8801,160.5242,23.7272,0.0,0.0,0.0,0.587
+passive,0.0806,162.1612,160.7694,1.3918,203.834,160.7694,23.6681,1102.6584,0.0,0.0,0.56

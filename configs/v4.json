@@ -1,0 +1,12 @@
+{
+ "extends": "default.json",
+ "name": "v4",
+ "seed_split": "sim4",
+ "world": {
+  "tailed": {"noise_sd": 0.3, "p_sig": 0.04, "noise0": 0.16, "contam_scale": 6.0, "b_range": [0.15, 0.25], "n_test": 2000, "n_probe": 400}
+ },
+ "design": {"version": 6, "n_points": 64, "n_worlds": 12},
+ "run": {"timeout_s": null},
+ "chunk_tasks": 24,
+ "analysis": {"n_boot": 400}
+}

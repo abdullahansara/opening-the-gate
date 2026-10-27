@@ -1,0 +1,6 @@
+variant,usefulness,median,fail,recovered,false_terms
+internal,0.656,0.851,0.277,0.138,2.622
+internal_cal,0.672,0.864,0.266,0.144,2.561
+internal_e30,0.701,0.896,0.238,0.161,2.436
+internal_e60,0.695,0.889,0.243,0.158,2.457
+internal_random_online_cal,0.693,0.888,0.246,0.155,2.407

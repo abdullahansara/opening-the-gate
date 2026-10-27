@@ -1,0 +1,4 @@
+contrast,estimate,se_twoway,lo_twoway,hi_twoway,lo_boot,hi_boot,lo,hi,p_twoway,n_cells,equivalent_pm_0.02
+surprise gate - random twin (unclipped),-0.6491,0.6017,-1.8283,0.5302,-2.4497,-0.023,-2.4497,0.5302,0.2807,24576,False
+guidance | internal (unclipped),0.6033,0.594,-0.5609,1.7675,-0.1139,3.5974,-0.5609,3.5974,0.3098,24576,False
+interactive - internal guided (unclipped),-0.0583,0.0509,-0.1582,0.0415,-0.2719,0.0552,-0.2719,0.0552,0.2522,24576,False

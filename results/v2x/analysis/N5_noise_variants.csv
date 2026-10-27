@@ -1,0 +1,4 @@
+world,gate_effect,q2_estimate,q2_lo,q2_hi,usefulness_mean,outliers_mean
+"default noisy world (8% outliers, 6 SD)",0.2489,0.0166,-0.0147,0.0513,0.52,12.25
+20% outliers (6 SD),0.1208,0.0723,0.025,0.1212,0.3881,31.5
+"8% outliers, 12 SD",0.0006,0.1352,0.088,0.1933,0.3548,12.25

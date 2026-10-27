@@ -1,0 +1,77 @@
+{
+  "pilot": "pilot",
+  "pilot_worlds_per_env": 6,
+  "sd_world_level_pair_diff": 0.12231556417387213,
+  "mean_se_interaction_slope_pilot": 0.050959599593136805,
+  "targets": {
+    "ci_target_halfwidth_pair": 0.02,
+    "ci_target_halfwidth_slope": 0.05
+  },
+  "table": [
+    {
+      "W": 4,
+      "clusters": 16,
+      "halfwidth_pair": 0.05993462644519734,
+      "halfwidth_slope": 0.12232851616973187,
+      "ok": false
+    },
+    {
+      "W": 6,
+      "clusters": 24,
+      "halfwidth_pair": 0.048936417571684106,
+      "halfwidth_slope": 0.09988081520254813,
+      "ok": false
+    },
+    {
+      "W": 8,
+      "clusters": 32,
+      "halfwidth_pair": 0.04238018078728162,
+      "halfwidth_slope": 0.08649932331610563,
+      "ok": false
+    },
+    {
+      "W": 12,
+      "clusters": 48,
+      "halfwidth_pair": 0.03460327271191435,
+      "halfwidth_slope": 0.0706264017401622,
+      "ok": false
+    },
+    {
+      "W": 16,
+      "clusters": 64,
+      "halfwidth_pair": 0.02996731322259867,
+      "halfwidth_slope": 0.06116425808486593,
+      "ok": false
+    },
+    {
+      "W": 24,
+      "clusters": 96,
+      "halfwidth_pair": 0.024468208785842053,
+      "halfwidth_slope": 0.049940407601274064,
+      "ok": false
+    },
+    {
+      "W": 32,
+      "clusters": 128,
+      "halfwidth_pair": 0.02119009039364081,
+      "halfwidth_slope": 0.043249661658052815,
+      "ok": false
+    },
+    {
+      "W": 48,
+      "clusters": 192,
+      "halfwidth_pair": 0.017301636355957176,
+      "halfwidth_slope": 0.0353132008700811,
+      "ok": true
+    },
+    {
+      "W": 64,
+      "clusters": 256,
+      "halfwidth_pair": 0.014983656611299336,
+      "halfwidth_slope": 0.030582129042432966,
+      "ok": true
+    }
+  ],
+  "recommended_W": 48,
+  "rule_satisfied": true
+}

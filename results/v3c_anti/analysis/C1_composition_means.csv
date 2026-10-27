@@ -1,0 +1,4 @@
+variant,usefulness,admitted,surprising_admitted,surprising,outliers_admitted,false_terms,recovered,share_admitted_surprising
+internal,0.656,143.891,10.572,26.681,2.019,2.622,0.138,0.073
+internal_antigate,0.691,144.349,16.222,16.222,2.922,2.391,0.158,0.112
+internal_random_online,0.688,143.894,15.363,17.496,2.76,2.43,0.153,0.107

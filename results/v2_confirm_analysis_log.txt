@@ -1,0 +1,11 @@
+done -> results\v2_confirm\analysis_v2
+                                                     test      p  p_holm
+                   C1a gate effect (trial schedule) > .05 0.0000  0.0000
+                              C1b schedule difference > 0 0.7838  1.0000
+                            C2 internal - internal_random 0.0000  0.0001
+                            C3a lam_c reduces false terms 0.0000  0.0000
+                         C3b margin_c reduces false terms 1.0000  1.0000
+                                  C3c interactions with g 0.0222  0.0889
+                                      C4a guidance effect 0.0000  0.0000
+                            C4b workspace beyond guidance 0.0939  0.2817
+C5 slope within +/-0.03 (equivalence; larger one-sided p) 0.0001  0.0004

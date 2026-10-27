@@ -1,0 +1,52 @@
+{
+ "F1": [
+  {
+   "effect": "gate effect, surprise-gated",
+   "estimate": 0.3032,
+   "lo": 0.213,
+   "hi": 0.3834
+  },
+  {
+   "effect": "volume effect, random twin (same admitted counts)",
+   "estimate": 0.1158,
+   "lo": 0.0359,
+   "hi": 0.181
+  },
+  {
+   "effect": "selection effect = surprise \u2212 random",
+   "estimate": 0.1874,
+   "lo": 0.134,
+   "hi": 0.2409
+  }
+ ],
+ "admitted_by_g_bin": {
+  "(-0.001, 0.1]": 108.7,
+  "(0.1, 0.25]": 130.9,
+  "(0.25, 0.5]": 143.7,
+  "(0.5, 1.0]": 155.0
+ },
+ "F2_acceptance_by_move": {
+  "0.0|add": 0.0973,
+  "0.0|drop": 0.1329,
+  "0.0|swap": 0.0635,
+  "0.5|add": 0.0806,
+  "0.5|drop": 0.0968,
+  "0.5|swap": 0.056,
+  "1.0|add": 0.0701,
+  "1.0|drop": 0.0365,
+  "1.0|swap": 0.0334
+ },
+ "F2_acceptance_drop_false_vs_true": {
+  "0.0|0": 0.0301,
+  "0.0|1": 0.2162,
+  "0.5|0": 0.0263,
+  "0.5|1": 0.1525,
+  "1.0|0": 0.0161,
+  "1.0|1": 0.0501
+ },
+ "F2_false_terms_by_margin": {
+  "0.0": 1.733,
+  "0.5": 1.908,
+  "1.0": 2.7
+ }
+}

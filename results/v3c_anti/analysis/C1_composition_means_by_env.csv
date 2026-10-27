@@ -1,0 +1,13 @@
+env,variant,usefulness,admitted,surprising_admitted
+interacting,internal,0.745,144.91,9.823
+interacting,internal_antigate,0.791,145.354,15.209
+interacting,internal_random_online,0.789,144.897,14.397
+noisy,internal,0.52,144.193,9.653
+noisy,internal_antigate,0.499,144.654,14.198
+noisy,internal_random_online,0.505,144.247,13.6
+shifting,internal,0.537,140.912,13.029
+shifting,internal_antigate,0.622,141.378,20.198
+shifting,internal_random_online,0.608,140.902,18.923
+simple,internal,0.823,145.548,9.782
+simple,internal_antigate,0.852,146.01,15.284
+simple,internal_random_online,0.847,145.531,14.532

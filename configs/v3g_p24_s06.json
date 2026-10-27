@@ -1,0 +1,33 @@
+{
+ "extends": "default.json",
+ "seed_split": "confirmatory",
+ "run": {
+  "timeout_s": null
+ },
+ "chunk_tasks": 24,
+ "analysis": {
+  "n_boot": 400
+ },
+ "design": {
+  "version": 4,
+  "n_points": 256,
+  "n_worlds": 12,
+  "envs": [
+   "noisy"
+  ],
+  "q_source": "results/v2_confirm/runs.csv",
+  "v3_conditions": [
+   "internal"
+  ]
+ },
+ "world": {
+  "envs": {
+   "noisy": {
+    "noise_sd": 0.8,
+    "contam_p": 0.24,
+    "contam_scale": 6.0
+   }
+  }
+ },
+ "name": "v3g_p24_s06"
+}

@@ -1,0 +1,26 @@
+contrast,estimate,se_twoway,lo_twoway,hi_twoway,lo_boot,hi_boot,lo,hi,p_twoway,n_cells,equivalent_pm_0.02
+internal_b30 - internal_random_b30,-0.0146,0.0083,-0.0308,0.0016,-0.0314,0.0023,-0.0314,0.0023,0.0767,24576,False
+internal - internal_random (frozen twin),-0.0318,0.0074,-0.0463,-0.0174,-0.0473,-0.0161,-0.0473,-0.0161,0.0,24576,False
+"internal - internal_random (offline, uniform timing)",-0.0318,0.0074,-0.0463,-0.0174,-0.047,-0.0168,-0.047,-0.0168,0.0,24576,False
+"internal - internal_random_blocks (offline, timing matched in blocks of 20)",-0.0275,0.0069,-0.041,-0.014,-0.0439,-0.0123,-0.0439,-0.0123,0.0001,24576,False
+"internal - internal_random_online (online, fixed admission probability)",-0.0314,0.0078,-0.0467,-0.016,-0.0468,-0.0168,-0.0468,-0.016,0.0001,24576,False
+internal_random_blocks - internal_random (timing alone),-0.0044,0.002,-0.0084,-0.0004,-0.0106,0.002,-0.0106,0.002,0.0326,24576,True
+"internal - internal_random, g<=1/3",-0.0819,0.0136,-0.1086,-0.0553,-0.1125,-0.0526,-0.1125,-0.0526,0.0,8208,False
+"internal - internal_random, g>2/3",-0.0007,0.0033,-0.0071,0.0057,-0.0112,0.0084,-0.0112,0.0084,0.825,8160,True
+"internal - internal_random, interacting",-0.0427,0.0074,-0.0571,-0.0282,-0.0554,-0.0305,-0.0571,-0.0282,0.0,6144,False
+"internal - internal_random, noisy",0.0166,0.0148,-0.0124,0.0456,-0.0102,0.0461,-0.0124,0.0461,0.262,6144,False
+"internal - internal_random, shifting",-0.0762,0.0109,-0.0975,-0.0549,-0.1034,-0.0553,-0.1034,-0.0549,0.0,6144,False
+"internal - internal_random, simple",-0.0251,0.004,-0.033,-0.0172,-0.0361,-0.0156,-0.0361,-0.0156,0.0,6144,False
+"internal - internal_random_blocks, g<=1/3",-0.0796,0.0131,-0.1052,-0.054,-0.1062,-0.0515,-0.1062,-0.0515,0.0,8208,False
+"internal - internal_random_blocks, g>2/3",-0.002,0.0033,-0.0085,0.0045,-0.0097,0.0057,-0.0097,0.0057,0.5425,8160,True
+"internal - internal_random_blocks, interacting",-0.0389,0.0063,-0.0513,-0.0265,-0.0578,-0.0246,-0.0578,-0.0246,0.0,6144,False
+"internal - internal_random_blocks, noisy",0.0143,0.0156,-0.0163,0.045,-0.0163,0.0483,-0.0163,0.0483,0.3592,6144,False
+"internal - internal_random_blocks, shifting",-0.0637,0.0098,-0.0829,-0.0445,-0.086,-0.0436,-0.086,-0.0436,0.0,6144,False
+"internal - internal_random_blocks, simple",-0.0216,0.0042,-0.0299,-0.0134,-0.0308,-0.0131,-0.0308,-0.0131,0.0,6144,False
+"internal - internal_random_online, g<=1/3",-0.09,0.0152,-0.1197,-0.0602,-0.1197,-0.0585,-0.1197,-0.0585,0.0,8208,False
+"internal - internal_random_online, g>2/3",-0.0015,0.0031,-0.0076,0.0046,-0.0119,0.0069,-0.0119,0.0069,0.6327,8160,True
+"internal - internal_random_online, interacting",-0.044,0.0086,-0.0609,-0.027,-0.0601,-0.0269,-0.0609,-0.0269,0.0,6144,False
+"internal - internal_random_online, noisy",0.0147,0.0164,-0.0174,0.0468,-0.0145,0.0541,-0.0174,0.0541,0.3693,6144,False
+"internal - internal_random_online, shifting",-0.0719,0.013,-0.0974,-0.0463,-0.1038,-0.0516,-0.1038,-0.0463,0.0,6144,False
+"internal - internal_random_online, simple",-0.0244,0.0043,-0.0329,-0.0159,-0.0347,-0.0158,-0.0347,-0.0158,0.0,6144,False
+internal_dropwaive - internal (usefulness),0.0152,0.0022,0.0109,0.0194,0.0104,0.0215,0.0104,0.0215,0.0,24576,True

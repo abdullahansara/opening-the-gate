@@ -1,0 +1,1 @@
+{ "extends": "v4.json", "name": "v4_pilot", "seed_split": "validation", "design": {"version": 6, "n_points": 8, "n_worlds": 2} }

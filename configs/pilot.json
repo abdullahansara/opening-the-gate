@@ -1,0 +1,1 @@
+{ "extends": "default.json", "name": "pilot", "seed_split": "validation", "design": {"n_points": 32, "n_worlds": 6}, "ablation": {"n_worlds": 10}, "baseline_worlds": 10, "chunk_tasks": 12, "analysis": {"n_boot": 200} }

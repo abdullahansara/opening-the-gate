@@ -1,0 +1,9 @@
+{
+  "n_store": 151,
+  "sec_per_likelihood_eval": 4.182900002342649e-05,
+  "sec_per_annotate_compare_combine": 8.525100001133978e-05,
+  "measured_ratio_ops_to_eval": 2.0380836253220167,
+  "configured_ops_units": 0.553,
+  "configured_eval_units": 1.0,
+  "note": "workspace ops are ~ (measured_ratio) evals; configured units should be of the same order."
+}

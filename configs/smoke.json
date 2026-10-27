@@ -1,0 +1,1 @@
+{ "extends": "default.json", "name": "smoke", "seed_split": "dev", "design": {"n_points": 4, "n_worlds": 2}, "ablation": {"n_worlds": 1}, "baseline_worlds": 2, "chunk_tasks": 4 }

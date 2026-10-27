@@ -1,0 +1,5 @@
+{
+ "extends": "v4.json",
+ "name": "v4b",
+ "design": {"version": 7, "n_points": 32, "n_worlds": 12, "reach": [10, 40], "budgets": [12, 24, 48]}
+}

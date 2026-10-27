@@ -1,0 +1,6 @@
+{
+ "frozen_utc": "2026-10-22T14:58:08.939877+00:00",
+ "plan_sha256": "260994e86f747ef55b38ae48eed72a9e75b1146bc71e86d7851615cb48d9bff7",
+ "config_hash_v4": "c10890e58c0e396492dfe8589b92a603fc5ddf23f213efe6c07b3bf7cb8e9035",
+ "tests": "51 passed (before Simulation 4 additions); 280 logged runs of Simulations 1-3 re-ran identically"
+}

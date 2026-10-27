@@ -1,0 +1,227 @@
+{
+  "chunk_sha256": {
+    "curves_00000.csv": "d3a67f77d2331a29d2c84f70e0bf848cd8a10ce07b16938233b85d126b0b57ac",
+    "curves_00001.csv": "79553350702013e110f1749995b0f7589e1221b7f4539ecedfd5f395e3c2da67",
+    "curves_00002.csv": "f08d77da9c973bc78cd89a6d2611216b45b8bf150bc3e800ed92b474b4c240c8",
+    "curves_00003.csv": "77a9612943a961b03e5b924cc6d5280e59789c89956093ea5f4467d0b84508b6",
+    "curves_00004.csv": "ee666865c1b4d6caf3b4a8576404cbbbbf988d671ef04d4136cced6a1c7937c1",
+    "curves_00005.csv": "a6dac068ec2306d9dbdd86d28c5db1df8bbe7e52222a7c63770c73ab0f78e553",
+    "curves_00006.csv": "a11891e74756c3bcd9388136822a0d83259c2e5771000d1b7f77c80944d37836",
+    "curves_00007.csv": "0a405dea4b349f55f9ab372cdc3a379165ecc593c48216f8148797be9a785079",
+    "curves_00008.csv": "1f7f725da9496e0e876d4a6bec4dc999a7c8ec7e33abd4d5d0800c57d8f38945",
+    "curves_00009.csv": "e2f85038f4433b481df0e35dee4da428650659e7c102be1f618cb17c6922ba80",
+    "curves_00010.csv": "5725e347975f8f5ed5d7616865942027108735c2a6d73eb4ced887dda2096ec2",
+    "curves_00011.csv": "c81ac4737998a73ca5703a56835df8422fcbf68fe332bca1b1fa4f02386846cc",
+    "runs_00000.csv": "55c6435f60a8691be643e67fd753fb2eea1064b5472798295291d3b50a609414",
+    "runs_00001.csv": "22f672b25498e6e7e1b594c3c07330a8ddbb686529cb14fea3a93453fcfeef6b",
+    "runs_00002.csv": "7674b1c743a8e7d8dd6b69a8ceccdcff9ea4f75adca8205f5d06f1fb14cadd0b",
+    "runs_00003.csv": "44112205325fcd78a17d5a3acd3f8f5e7cb0efb975c70603bc84633055b6b7b0",
+    "runs_00004.csv": "b93829600f4249c9d93fc3714945a51820ca9f4cb839374f599edf0db81902df",
+    "runs_00005.csv": "eda8d537ea11f8ba9765f15e1d7e1e721ea204da3628c905e8f8da784dfd8b4e",
+    "runs_00006.csv": "1625d5534c5c572f5dad7320f0b71f04d12ae4df22be8521bae1576c89cc40a9",
+    "runs_00007.csv": "0510149605b59f8a24f2a005e1ba786f8c590d26a3776e45ecbd8e95404b60ec",
+    "runs_00008.csv": "3451a383d8760ddd4da164aad57191ab464bf96ac95a1d671d86e70b5c42f80b",
+    "runs_00009.csv": "88a74d4565c1ab6115ac513d890a30e04b6719068f19f500a547238e52867993",
+    "runs_00010.csv": "d3484ef41f9432cfb85c0399b4ef1b1debc80080f99ff723577afdfe61545f48",
+    "runs_00011.csv": "8ec3e090e15dce9d492533539a6bfa500aac0f0bc7c0bb9dcf787e3573a8a83a",
+    "worlds_00000.csv": "4e57723a86e1bd7a2442961aac94033d941260630c19faf102eae9d76ffb691c",
+    "worlds_00001.csv": "825e1eb1b018679a89e22cdf6a0e1cb4251165e79d6c41e7a4b60fee4658a973",
+    "worlds_00002.csv": "19c64c3a648b90aabb437b124b9341cc6204c20ea61a631d73a3933b233c844c",
+    "worlds_00003.csv": "4e57723a86e1bd7a2442961aac94033d941260630c19faf102eae9d76ffb691c",
+    "worlds_00004.csv": "825e1eb1b018679a89e22cdf6a0e1cb4251165e79d6c41e7a4b60fee4658a973",
+    "worlds_00005.csv": "19c64c3a648b90aabb437b124b9341cc6204c20ea61a631d73a3933b233c844c",
+    "worlds_00006.csv": "4e57723a86e1bd7a2442961aac94033d941260630c19faf102eae9d76ffb691c",
+    "worlds_00007.csv": "825e1eb1b018679a89e22cdf6a0e1cb4251165e79d6c41e7a4b60fee4658a973",
+    "worlds_00008.csv": "19c64c3a648b90aabb437b124b9341cc6204c20ea61a631d73a3933b233c844c",
+    "worlds_00009.csv": "4e57723a86e1bd7a2442961aac94033d941260630c19faf102eae9d76ffb691c",
+    "worlds_00010.csv": "825e1eb1b018679a89e22cdf6a0e1cb4251165e79d6c41e7a4b60fee4658a973",
+    "worlds_00011.csv": "19c64c3a648b90aabb437b124b9341cc6204c20ea61a631d73a3933b233c844c"
+  },
+  "config": {
+    "ablation": {
+      "n_worlds": 2,
+      "reference": {
+        "c": 0.5,
+        "f": 0.5,
+        "g": 0.5,
+        "m": 5,
+        "pi": 1.0
+      }
+    },
+    "agent": {
+      "budget_per_f": 14.0,
+      "burn_in": 6,
+      "costs": {
+        "annotate": 0.008,
+        "combine": 0.05,
+        "compare": 0.005,
+        "eval": 1.0,
+        "pool_refit": 0.0,
+        "read": 0.001,
+        "write": 0.002
+      },
+      "credit_carry": true,
+      "margin_scale": 0.1,
+      "max_evals": null,
+      "max_terms": 8,
+      "p_add": 0.6,
+      "p_drop": 0.2,
+      "penalty_scale": 2.0,
+      "retrieval": "mixed",
+      "retrieval_recent_frac": 0.5,
+      "rev_every": 6,
+      "rev_trigger": "admitted",
+      "sigma2_floor": 0.0001,
+      "store_capacity": 200,
+      "val_every": 4,
+      "window_per_slot": 12,
+      "z_thr": 2.0
+    },
+    "analysis": {
+      "adequate_c_min": 0.5,
+      "adequate_f_min": 0.3,
+      "alpha": 0.05,
+      "ci_target_halfwidth_pair": 0.02,
+      "ci_target_halfwidth_slope": 0.05,
+      "cv_folds": 5,
+      "n_boot": 400,
+      "peak_interior": [
+        0.1,
+        0.9
+      ],
+      "strong_c_min": 0.6666666666666666,
+      "weak_c_max": 0.3333333333333333
+    },
+    "baseline_worlds": 4,
+    "chunk_tasks": 24,
+    "design": {
+      "artifacts": [
+        "internal",
+        "internal_big",
+        "passive",
+        "interactive"
+      ],
+      "envs": [
+        "simple",
+        "interacting",
+        "noisy",
+        "shifting"
+      ],
+      "n_points": 8,
+      "n_worlds": 2,
+      "ranges": {
+        "c": [
+          0.0,
+          1.0
+        ],
+        "f": [
+          0.0,
+          1.0
+        ],
+        "g": [
+          0.0,
+          1.0
+        ],
+        "m": [
+          2,
+          8
+        ],
+        "pi": [
+          0.5,
+          2.0
+        ]
+      },
+      "version": 6
+    },
+    "master_seed": 20261011,
+    "name": "v4_pilot",
+    "run": {
+      "ckpt_every": 20,
+      "recover_mult": 3.0,
+      "recover_window": 12,
+      "timeout_s": null
+    },
+    "seed_split": "validation",
+    "workers": 6,
+    "world": {
+      "T": 160,
+      "d": 5,
+      "envs": {
+        "interacting": {
+          "contam_p": 0.0,
+          "contam_scale": 0.0,
+          "noise_sd": 0.3
+        },
+        "noisy": {
+          "contam_p": 0.08,
+          "contam_scale": 6.0,
+          "noise_sd": 0.8
+        },
+        "shifting": {
+          "contam_p": 0.0,
+          "contam_scale": 0.0,
+          "noise_sd": 0.3
+        },
+        "simple": {
+          "contam_p": 0.0,
+          "contam_scale": 0.0,
+          "noise_sd": 0.3
+        }
+      },
+      "min_signal_var": 0.8,
+      "n_test": 400,
+      "shift_frac": 0.5,
+      "tailed": {
+        "b_range": [
+          0.15,
+          0.25
+        ],
+        "contam_scale": 6.0,
+        "n_probe": 400,
+        "n_test": 2000,
+        "noise0": 0.16,
+        "noise_sd": 0.3,
+        "p_sig": 0.04
+      }
+    }
+  },
+  "config_hash": "924cefc21ae0d716bc3cd12347527ccee3df70066afeb575019064ac59c4e096",
+  "config_name": "v4_pilot",
+  "counts": {
+    "curves": 34560,
+    "runs": 4320,
+    "worlds": 36
+  },
+  "cpu": "11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz",
+  "created_utc": "2026-10-22T14:56:53+00:00",
+  "git_commit": null,
+  "gpu": null,
+  "logical_cores": 8,
+  "output_sha256": {
+    "curves.csv": "db505741f2b2bd3a9007bbd017cfff56f701c74a2b5ffce6a79cda4530d53b11",
+    "runs.csv": "0ff1635fba6eee8c15c2003daa2c82bba1ff73551d435b681184624066990240",
+    "worlds.csv": "87c2af745f6923c5c9660c8b472990f07dfd7801c36aa048d5185911e73107a0"
+  },
+  "package_versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "patsy": "1.0.3",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "seeds": {
+    "ablation_worlds": 2,
+    "baseline_worlds": 4,
+    "design_worlds": 2,
+    "master_seed": 20261011,
+    "seed_split": "validation",
+    "world_id_offset": 1000
+  },
+  "source_sha256": "2520804b323bfb4237d76f110c7bc24d4b9b8e31ed95d35bac33d413ca50eac9",
+  "wall_seconds_this_invocation": 87.44,
+  "workers": 6
+}

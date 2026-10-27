@@ -1,0 +1,2 @@
+contrast,estimate,se_twoway,lo_twoway,hi_twoway,lo_boot,hi_boot,lo,hi,p_twoway,n_cells,equivalent_pm_0.02
+internal_cal - internal_random_online_cal (calibrated gate vs matched online random),-0.0214,0.0078,-0.0367,-0.0061,-0.0374,-0.0044,-0.0374,-0.0044,0.0062,24576,False

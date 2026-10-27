@@ -1,0 +1,10 @@
+analysis,contrast,estimate,se_twoway,lo_twoway,hi_twoway,lo_boot,hi_boot,lo,hi,p_twoway
+cold start (gate starts after 30 observations),gate effect: internal,0.3031,0.0402,0.2243,0.3819,0.2116,0.3844,0.2116,0.3844,0.0
+cold start (gate starts after 30 observations),gate effect: internal_b30,0.1057,0.0417,0.024,0.1874,0.0291,0.1852,0.024,0.1874,0.0112
+cold start (gate starts after 30 observations),internal_b30 - internal,-0.1974,0.0281,-0.2525,-0.1424,-0.252,-0.1421,-0.2525,-0.1421,0.0
+surprise threshold 1.5,gate effect: internal,0.3032,0.0396,0.2256,0.3807,0.2068,0.3861,0.2068,0.3861,0.0
+surprise threshold 1.5,gate effect: internal_z15,0.4513,0.0431,0.3667,0.5358,0.3553,0.5375,0.3553,0.5375,0.0
+surprise threshold 1.5,internal_z15 - internal,0.1481,0.0113,0.126,0.1703,0.1168,0.1884,0.1168,0.1884,0.0
+surprise threshold 3,gate effect: internal,0.3032,0.0402,0.2244,0.3819,0.2201,0.3702,0.2201,0.3819,0.0
+surprise threshold 3,gate effect: internal_z30,0.0922,0.0361,0.0215,0.163,0.023,0.1647,0.0215,0.1647,0.0106
+surprise threshold 3,internal_z30 - internal,-0.2109,0.0199,-0.2499,-0.1719,-0.2567,-0.1622,-0.2567,-0.1622,0.0

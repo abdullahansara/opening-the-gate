@@ -1,0 +1,9 @@
+contrast,mean,median,p10,p90,share_gt_.05,share_lt_-.05,share_abs_lt_.02,share_zero,n
+surprise gate - matched random twin,-0.0318,-0.0,-0.334,0.212,0.2056,0.262,0.4435,0.0809,24576
+guidance | internal window,0.0599,0.0,-0.2023,0.4716,0.339,0.1749,0.4212,0.0903,24576
+guidance | all-data memory,0.0405,0.0,-0.1862,0.3683,0.3284,0.1858,0.4113,0.0958,24576
+guidance | passive store,0.0544,0.0014,-0.2237,0.4459,0.3607,0.1963,0.3558,0.0039,24576
+interactive - internal guided,-0.0343,-0.0003,-0.336,0.2117,0.1937,0.2899,0.4278,0.0068,24576
+interactive (recent) - internal guided,-0.0011,0.0,-0.2188,0.1976,0.1933,0.1902,0.5438,0.0886,24576
+passive - internal (storage alone),-0.0288,-0.0006,-0.4457,0.3522,0.274,0.3414,0.3012,0.0032,24576
+all-data memory - internal,-0.0299,0.0001,-0.4636,0.367,0.2837,0.3439,0.2929,0.0031,24576

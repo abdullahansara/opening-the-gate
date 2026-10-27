@@ -1,0 +1,1 @@
+{ "extends": "v4b.json", "name": "v4b_smoke", "seed_split": "validation", "design": {"version": 7, "n_points": 4, "n_worlds": 2, "reach": [40], "budgets": [12, 24, 48]} }

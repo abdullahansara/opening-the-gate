@@ -1,0 +1,8 @@
+{
+ "frozen_utc": "2026-10-12T16:47:15+00:00",
+ "plan_sha256": "f725f65c526d40ef1ac968170f2463b0c4031fa9d8fee7211a9d3518d4d6103c",
+ "source_hash": "7bf266fce732ff74b8342bb8544d5b0bfc806ba511024b7caf8885e0b0290af2",
+ "tests": "51 passed",
+ "config_hash_v3c_anti": "130cd3e040a8512d756609ceb303585d79050aa945f9121e2bc47ceb191b7713",
+ "config_hash_v3c_store": "6b348aedc182dd7b4ada47802a17d6c459ce678fc7ea5ed476290de59da548b1"
+}

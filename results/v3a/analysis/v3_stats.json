@@ -1,0 +1,664 @@
+{
+ "N0": {
+  "n_compared": 24576,
+  "max_abs_diff": 0.0
+ },
+ "Q1_Q2": [
+  {
+   "analysis": "Q1 calibrated predictive uncertainty",
+   "contrast": "gate effect: internal",
+   "estimate": 0.3031,
+   "se_twoway": 0.04,
+   "lo_twoway": 0.2247,
+   "hi_twoway": 0.3816,
+   "lo_boot": 0.2116,
+   "hi_boot": 0.3838,
+   "lo": 0.2116,
+   "hi": 0.3838,
+   "p_twoway": 0.0
+  },
+  {
+   "analysis": "Q1 calibrated predictive uncertainty",
+   "contrast": "gate effect: internal_cal",
+   "estimate": 0.2043,
+   "se_twoway": 0.036,
+   "lo_twoway": 0.1338,
+   "hi_twoway": 0.2747,
+   "lo_boot": 0.128,
+   "hi_boot": 0.2734,
+   "lo": 0.128,
+   "hi": 0.2747,
+   "p_twoway": 0.0
+  },
+  {
+   "analysis": "Q1 calibrated predictive uncertainty",
+   "contrast": "internal_cal - internal",
+   "estimate": -0.0989,
+   "se_twoway": 0.0148,
+   "lo_twoway": -0.1279,
+   "hi_twoway": -0.0698,
+   "lo_boot": -0.1413,
+   "hi_boot": -0.0665,
+   "lo": -0.1413,
+   "hi": -0.0665,
+   "p_twoway": 0.0
+  },
+  {
+   "analysis": "Q2 gate works only until observation 30",
+   "contrast": "gate effect: internal",
+   "estimate": 0.3033,
+   "se_twoway": 0.0401,
+   "lo_twoway": 0.2246,
+   "hi_twoway": 0.3819,
+   "lo_boot": 0.2214,
+   "hi_boot": 0.3926,
+   "lo": 0.2214,
+   "hi": 0.3926,
+   "p_twoway": 0.0
+  },
+  {
+   "analysis": "Q2 gate works only until observation 30",
+   "contrast": "gate effect: internal_e30",
+   "estimate": 0.031,
+   "se_twoway": 0.0291,
+   "lo_twoway": -0.026,
+   "hi_twoway": 0.0881,
+   "lo_boot": -0.0234,
+   "hi_boot": 0.0879,
+   "lo": -0.026,
+   "hi": 0.0881,
+   "p_twoway": 0.2863
+  },
+  {
+   "analysis": "Q2 gate works only until observation 30",
+   "contrast": "internal_e30 - internal",
+   "estimate": -0.2722,
+   "se_twoway": 0.0313,
+   "lo_twoway": -0.3336,
+   "hi_twoway": -0.2109,
+   "lo_boot": -0.3315,
+   "hi_boot": -0.2105,
+   "lo": -0.3336,
+   "hi": -0.2105,
+   "p_twoway": 0.0
+  },
+  {
+   "analysis": "Q2 gate works only until observation 60",
+   "contrast": "gate effect: internal",
+   "estimate": 0.3032,
+   "se_twoway": 0.0401,
+   "lo_twoway": 0.2247,
+   "hi_twoway": 0.3818,
+   "lo_boot": 0.2071,
+   "hi_boot": 0.3835,
+   "lo": 0.2071,
+   "hi": 0.3835,
+   "p_twoway": 0.0
+  },
+  {
+   "analysis": "Q2 gate works only until observation 60",
+   "contrast": "gate effect: internal_e60",
+   "estimate": 0.0495,
+   "se_twoway": 0.0301,
+   "lo_twoway": -0.0096,
+   "hi_twoway": 0.1086,
+   "lo_boot": -0.016,
+   "hi_boot": 0.1207,
+   "lo": -0.016,
+   "hi": 0.1207,
+   "p_twoway": 0.1004
+  },
+  {
+   "analysis": "Q2 gate works only until observation 60",
+   "contrast": "internal_e60 - internal",
+   "estimate": -0.2537,
+   "se_twoway": 0.0298,
+   "lo_twoway": -0.3121,
+   "hi_twoway": -0.1954,
+   "lo_boot": -0.3129,
+   "hi_boot": -0.1847,
+   "lo": -0.3129,
+   "hi": -0.1847,
+   "p_twoway": 0.0
+  }
+ ],
+ "Q1_Q2_by_env": [
+  {
+   "variant": "internal",
+   "env": "all",
+   "gate_effect": 0.3031,
+   "usefulness_at_g05": 0.408,
+   "mean_usefulness": 0.6562,
+   "admitted": 143.8909,
+   "surprising": 26.681
+  },
+  {
+   "variant": "internal",
+   "env": "interacting",
+   "gate_effect": 0.2833,
+   "usefulness_at_g05": 0.5105,
+   "mean_usefulness": 0.7451,
+   "admitted": 144.9105,
+   "surprising": 24.9123
+  },
+  {
+   "variant": "internal",
+   "env": "noisy",
+   "gate_effect": 0.2489,
+   "usefulness_at_g05": 0.286,
+   "mean_usefulness": 0.52,
+   "admitted": 144.193,
+   "surprising": 25.4604
+  },
+  {
+   "variant": "internal",
+   "env": "shifting",
+   "gate_effect": 0.4814,
+   "usefulness_at_g05": 0.177,
+   "mean_usefulness": 0.5366,
+   "admitted": 140.9121,
+   "surprising": 32.1172
+  },
+  {
+   "variant": "internal",
+   "env": "simple",
+   "gate_effect": 0.1991,
+   "usefulness_at_g05": 0.6585,
+   "mean_usefulness": 0.8231,
+   "admitted": 145.5479,
+   "surprising": 24.234
+  },
+  {
+   "variant": "internal_cal",
+   "env": "all",
+   "gate_effect": 0.2043,
+   "usefulness_at_g05": 0.5092,
+   "mean_usefulness": 0.6718,
+   "admitted": 147.4408,
+   "surprising": 21.1242
+  },
+  {
+   "variant": "internal_cal",
+   "env": "interacting",
+   "gate_effect": 0.1685,
+   "usefulness_at_g05": 0.6267,
+   "mean_usefulness": 0.7608,
+   "admitted": 148.5184,
+   "surprising": 19.2832
+  },
+  {
+   "variant": "internal_cal",
+   "env": "noisy",
+   "gate_effect": 0.1121,
+   "usefulness_at_g05": 0.4214,
+   "mean_usefulness": 0.5448,
+   "admitted": 147.3133,
+   "surprising": 20.7583
+  },
+  {
+   "variant": "internal_cal",
+   "env": "shifting",
+   "gate_effect": 0.4134,
+   "usefulness_at_g05": 0.2516,
+   "mean_usefulness": 0.5478,
+   "admitted": 144.5954,
+   "surprising": 26.2199
+  },
+  {
+   "variant": "internal_cal",
+   "env": "simple",
+   "gate_effect": 0.1231,
+   "usefulness_at_g05": 0.7372,
+   "mean_usefulness": 0.834,
+   "admitted": 149.3359,
+   "surprising": 18.2354
+  },
+  {
+   "variant": "internal_e30",
+   "env": "all",
+   "gate_effect": 0.0311,
+   "usefulness_at_g05": 0.6811,
+   "mean_usefulness": 0.7011,
+   "admitted": 156.3048,
+   "surprising": 19.4906
+  },
+  {
+   "variant": "internal_e30",
+   "env": "interacting",
+   "gate_effect": 0.0341,
+   "usefulness_at_g05": 0.7584,
+   "mean_usefulness": 0.7853,
+   "admitted": 156.3786,
+   "surprising": 18.4738
+  },
+  {
+   "variant": "internal_e30",
+   "env": "noisy",
+   "gate_effect": 0.0391,
+   "usefulness_at_g05": 0.4902,
+   "mean_usefulness": 0.514,
+   "admitted": 156.1912,
+   "surprising": 17.702
+  },
+  {
+   "variant": "internal_e30",
+   "env": "shifting",
+   "gate_effect": 0.0344,
+   "usefulness_at_g05": 0.6348,
+   "mean_usefulness": 0.6547,
+   "admitted": 156.1888,
+   "surprising": 23.4998
+  },
+  {
+   "variant": "internal_e30",
+   "env": "simple",
+   "gate_effect": 0.0171,
+   "usefulness_at_g05": 0.8412,
+   "mean_usefulness": 0.8505,
+   "admitted": 156.4604,
+   "surprising": 18.2868
+  },
+  {
+   "variant": "internal_e60",
+   "env": "all",
+   "gate_effect": 0.0496,
+   "usefulness_at_g05": 0.6607,
+   "mean_usefulness": 0.6951,
+   "admitted": 153.143,
+   "surprising": 21.6521
+  },
+  {
+   "variant": "internal_e60",
+   "env": "interacting",
+   "gate_effect": 0.0478,
+   "usefulness_at_g05": 0.7451,
+   "mean_usefulness": 0.781,
+   "admitted": 153.1999,
+   "surprising": 20.7651
+  },
+  {
+   "variant": "internal_e60",
+   "env": "noisy",
+   "gate_effect": 0.0702,
+   "usefulness_at_g05": 0.4579,
+   "mean_usefulness": 0.5081,
+   "admitted": 153.104,
+   "surprising": 20.0908
+  },
+  {
+   "variant": "internal_e60",
+   "env": "shifting",
+   "gate_effect": 0.0529,
+   "usefulness_at_g05": 0.6091,
+   "mean_usefulness": 0.6445,
+   "admitted": 152.8366,
+   "surprising": 25.4385
+  },
+  {
+   "variant": "internal_e60",
+   "env": "simple",
+   "gate_effect": 0.0275,
+   "usefulness_at_g05": 0.8306,
+   "mean_usefulness": 0.8467,
+   "admitted": 153.4315,
+   "surprising": 20.3141
+  }
+ ],
+ "Q1_contrasts": [
+  {
+   "contrast": "internal_cal - internal_random_online_cal (calibrated gate vs matched online random)",
+   "estimate": -0.0214,
+   "se_twoway": 0.0078,
+   "lo_twoway": -0.0367,
+   "hi_twoway": -0.0061,
+   "lo_boot": -0.0374,
+   "hi_boot": -0.0044,
+   "lo": -0.0374,
+   "hi": -0.0044,
+   "p_twoway": 0.0062,
+   "n_cells": 24576,
+   "equivalent_pm_0.02": false
+  }
+ ],
+ "low_g": {
+  "internal": {
+   "usefulness": 0.471,
+   "median": 0.629,
+   "admitted": 114.103,
+   "surprising": 49.058,
+   "recovered": 0.091
+  },
+  "internal_cal": {
+   "usefulness": 0.546,
+   "median": 0.711,
+   "admitted": 125.428,
+   "surprising": 36.998,
+   "recovered": 0.11
+  },
+  "internal_e30": {
+   "usefulness": 0.683,
+   "median": 0.877,
+   "admitted": 151.421,
+   "surprising": 24.094,
+   "recovered": 0.15
+  },
+  "internal_e60": {
+   "usefulness": 0.665,
+   "median": 0.855,
+   "admitted": 141.808,
+   "surprising": 31.562,
+   "recovered": 0.137
+  },
+  "internal_random_online_cal": {
+   "usefulness": 0.659,
+   "median": 0.843,
+   "admitted": 125.391,
+   "surprising": 18.41,
+   "recovered": 0.136
+  }
+ },
+ "variant_means": {
+  "internal": {
+   "usefulness": 0.656,
+   "median": 0.851,
+   "fail": 0.277,
+   "recovered": 0.138,
+   "false_terms": 2.622
+  },
+  "internal_cal": {
+   "usefulness": 0.672,
+   "median": 0.864,
+   "fail": 0.266,
+   "recovered": 0.144,
+   "false_terms": 2.561
+  },
+  "internal_e30": {
+   "usefulness": 0.701,
+   "median": 0.896,
+   "fail": 0.238,
+   "recovered": 0.161,
+   "false_terms": 2.436
+  },
+  "internal_e60": {
+   "usefulness": 0.695,
+   "median": 0.889,
+   "fail": 0.243,
+   "recovered": 0.158,
+   "false_terms": 2.457
+  },
+  "internal_random_online_cal": {
+   "usefulness": 0.693,
+   "median": 0.888,
+   "fail": 0.246,
+   "recovered": 0.155,
+   "false_terms": 2.407
+  }
+ },
+ "curves_columns": [
+  "run_id",
+  "t",
+  "heldout_ll",
+  "heldout_mse",
+  "r2_true",
+  "cover90",
+  "r2_map",
+  "preq_mse"
+ ],
+ "Q3": [
+  {
+   "cell": "p00_s06",
+   "outlier_p": 0.0,
+   "outlier_sd_mult": 6,
+   "gate_effect": 0.3181,
+   "ge_lo": 0.1493,
+   "ge_hi": 0.4644,
+   "q2_estimate": -0.063,
+   "q2_lo": -0.0882,
+   "q2_hi": -0.0321,
+   "usefulness": 0.6436,
+   "outliers": 0.0,
+   "surprising": 25.6462,
+   "admitted": 144.3584
+  },
+  {
+   "cell": "p04_s03",
+   "outlier_p": 0.04,
+   "outlier_sd_mult": 3,
+   "gate_effect": 0.3304,
+   "ge_lo": 0.2085,
+   "ge_hi": 0.4863,
+   "q2_estimate": -0.0612,
+   "q2_lo": -0.0814,
+   "q2_hi": -0.0363,
+   "usefulness": 0.6154,
+   "outliers": 6.3333,
+   "surprising": 25.929,
+   "admitted": 144.0378
+  },
+  {
+   "cell": "p04_s06",
+   "outlier_p": 0.04,
+   "outlier_sd_mult": 6,
+   "gate_effect": 0.2905,
+   "ge_lo": 0.17,
+   "ge_hi": 0.4259,
+   "q2_estimate": -0.0256,
+   "q2_lo": -0.0554,
+   "q2_hi": 0.0056,
+   "usefulness": 0.5791,
+   "outliers": 6.3333,
+   "surprising": 25.0186,
+   "admitted": 144.5124
+  },
+  {
+   "cell": "p04_s09",
+   "outlier_p": 0.04,
+   "outlier_sd_mult": 9,
+   "gate_effect": 0.1766,
+   "ge_lo": 0.0385,
+   "ge_hi": 0.3196,
+   "q2_estimate": 0.0126,
+   "q2_lo": -0.0233,
+   "q2_hi": 0.0486,
+   "usefulness": 0.5255,
+   "outliers": 6.3333,
+   "surprising": 24.3408,
+   "admitted": 144.8229
+  },
+  {
+   "cell": "p04_s12",
+   "outlier_p": 0.04,
+   "outlier_sd_mult": 12,
+   "gate_effect": 0.1146,
+   "ge_lo": -0.0097,
+   "ge_hi": 0.2715,
+   "q2_estimate": 0.0647,
+   "q2_lo": 0.0081,
+   "q2_hi": 0.1138,
+   "usefulness": 0.4721,
+   "outliers": 6.3333,
+   "surprising": 23.751,
+   "admitted": 145.1191
+  },
+  {
+   "cell": "p08_s03",
+   "outlier_p": 0.08,
+   "outlier_sd_mult": 3,
+   "gate_effect": 0.322,
+   "ge_lo": 0.1823,
+   "ge_hi": 0.4909,
+   "q2_estimate": -0.052,
+   "q2_lo": -0.0756,
+   "q2_hi": -0.0256,
+   "usefulness": 0.6,
+   "outliers": 12.25,
+   "surprising": 26.1842,
+   "admitted": 144.0234
+  },
+  {
+   "cell": "p08_s06",
+   "outlier_p": 0.08,
+   "outlier_sd_mult": 6,
+   "gate_effect": 0.2023,
+   "ge_lo": 0.1018,
+   "ge_hi": 0.3558,
+   "q2_estimate": 0.0107,
+   "q2_lo": -0.0187,
+   "q2_hi": 0.0421,
+   "usefulness": 0.5324,
+   "outliers": 12.25,
+   "surprising": 25.2982,
+   "admitted": 144.457
+  },
+  {
+   "cell": "p08_s09",
+   "outlier_p": 0.08,
+   "outlier_sd_mult": 9,
+   "gate_effect": 0.0558,
+   "ge_lo": -0.1053,
+   "ge_hi": 0.2307,
+   "q2_estimate": 0.078,
+   "q2_lo": 0.0183,
+   "q2_hi": 0.1377,
+   "usefulness": 0.4392,
+   "outliers": 12.25,
+   "surprising": 24.5117,
+   "admitted": 144.7939
+  },
+  {
+   "cell": "p08_s12",
+   "outlier_p": 0.08,
+   "outlier_sd_mult": 12,
+   "gate_effect": -0.0846,
+   "ge_lo": -0.237,
+   "ge_hi": 0.0931,
+   "q2_estimate": 0.1536,
+   "q2_lo": 0.0963,
+   "q2_hi": 0.224,
+   "usefulness": 0.3635,
+   "outliers": 12.25,
+   "surprising": 23.8923,
+   "admitted": 145.1263
+  },
+  {
+   "cell": "p16_s03",
+   "outlier_p": 0.16,
+   "outlier_sd_mult": 3,
+   "gate_effect": 0.3312,
+   "ge_lo": 0.1791,
+   "ge_hi": 0.5003,
+   "q2_estimate": -0.0443,
+   "q2_lo": -0.0702,
+   "q2_hi": -0.0174,
+   "usefulness": 0.5594,
+   "outliers": 24.9167,
+   "surprising": 25.3584,
+   "admitted": 144.5801
+  },
+  {
+   "cell": "p16_s06",
+   "outlier_p": 0.16,
+   "outlier_sd_mult": 6,
+   "gate_effect": 0.1142,
+   "ge_lo": -0.0514,
+   "ge_hi": 0.3237,
+   "q2_estimate": 0.0528,
+   "q2_lo": -0.0018,
+   "q2_hi": 0.1076,
+   "usefulness": 0.4283,
+   "outliers": 24.9167,
+   "surprising": 25.4421,
+   "admitted": 144.4414
+  },
+  {
+   "cell": "p16_s09",
+   "outlier_p": 0.16,
+   "outlier_sd_mult": 9,
+   "gate_effect": -0.0238,
+   "ge_lo": -0.2142,
+   "ge_hi": 0.1711,
+   "q2_estimate": 0.1244,
+   "q2_lo": 0.0626,
+   "q2_hi": 0.2024,
+   "usefulness": 0.2984,
+   "outliers": 24.9167,
+   "surprising": 25.348,
+   "admitted": 144.4818
+  },
+  {
+   "cell": "p16_s12",
+   "outlier_p": 0.16,
+   "outlier_sd_mult": 12,
+   "gate_effect": -0.1906,
+   "ge_lo": -0.3593,
+   "ge_hi": 0.0137,
+   "q2_estimate": 0.1763,
+   "q2_lo": 0.1145,
+   "q2_hi": 0.2402,
+   "usefulness": 0.1812,
+   "outliers": 24.9167,
+   "surprising": 24.9053,
+   "admitted": 144.7793
+  },
+  {
+   "cell": "p24_s03",
+   "outlier_p": 0.24,
+   "outlier_sd_mult": 3,
+   "gate_effect": 0.2717,
+   "ge_lo": 0.1433,
+   "ge_hi": 0.4133,
+   "q2_estimate": -0.0284,
+   "q2_lo": -0.0555,
+   "q2_hi": 0.0039,
+   "usefulness": 0.5312,
+   "outliers": 37.9167,
+   "surprising": 25.3001,
+   "admitted": 144.8232
+  },
+  {
+   "cell": "p24_s06",
+   "outlier_p": 0.24,
+   "outlier_sd_mult": 6,
+   "gate_effect": 0.0316,
+   "ge_lo": -0.0945,
+   "ge_hi": 0.2507,
+   "q2_estimate": 0.0939,
+   "q2_lo": 0.0219,
+   "q2_hi": 0.15,
+   "usefulness": 0.3451,
+   "outliers": 37.9167,
+   "surprising": 26.3031,
+   "admitted": 144.1338
+  },
+  {
+   "cell": "p24_s09",
+   "outlier_p": 0.24,
+   "outlier_sd_mult": 9,
+   "gate_effect": -0.2036,
+   "ge_lo": -0.3784,
+   "ge_hi": 0.0081,
+   "q2_estimate": 0.1539,
+   "q2_lo": 0.1036,
+   "q2_hi": 0.2031,
+   "usefulness": 0.1662,
+   "outliers": 37.9167,
+   "surprising": 26.972,
+   "admitted": 143.7673
+  },
+  {
+   "cell": "p24_s12",
+   "outlier_p": 0.24,
+   "outlier_sd_mult": 12,
+   "gate_effect": -0.3455,
+   "ge_lo": -0.4983,
+   "ge_hi": -0.1728,
+   "q2_estimate": 0.1958,
+   "q2_lo": 0.1478,
+   "q2_hi": 0.2468,
+   "usefulness": 0.0222,
+   "outliers": 37.9167,
+   "surprising": 26.6562,
+   "admitted": 144.0137
+  }
+ ]
+}

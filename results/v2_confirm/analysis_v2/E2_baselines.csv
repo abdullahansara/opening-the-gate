@@ -1,0 +1,4 @@
+variant,usefulness,false_discovery,n_false_terms,cost_units
+bayes_unrestricted,0.894,0.6667,1.3229,1946.4375
+fixed_structure,0.6608,1.0,3.875,0.0
+random_structure,0.7071,0.9688,2.1562,364.0

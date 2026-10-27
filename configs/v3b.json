@@ -1,0 +1,22 @@
+{
+ "extends": "default.json",
+ "seed_split": "confirmatory",
+ "run": {
+  "timeout_s": null
+ },
+ "chunk_tasks": 24,
+ "analysis": {
+  "n_boot": 400
+ },
+ "design": {
+  "version": 4,
+  "n_points": 512,
+  "n_worlds": 12,
+  "q_source": "results/v3a/runs.csv",
+  "q_variant": "internal_cal",
+  "v3_conditions": [
+   "internal_random_online_cal"
+  ]
+ },
+ "name": "v3b"
+}
